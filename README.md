@@ -17,7 +17,8 @@ Portanto, o grande problema que essas empresas enfrentam é descobrir quanto e q
 * Lucas Machado de Oliveira Andrade
 * Rafael Pierre Martins
 * Daniel Estevam Pacheco de Souza
-* Nome completo do aluno 4
+* Gabriel Augusto Souza Borges
+* Pedro Rabelo de Freitas
 
 ## Professores responsáveis
 
