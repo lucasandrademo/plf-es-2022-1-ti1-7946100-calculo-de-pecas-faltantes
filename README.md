@@ -14,16 +14,18 @@ Portanto, o grande problema que essas empresas enfrentam é descobrir quanto e q
 
 ## Alunos integrantes da equipe
 
-* Lucas Machado de Oliveira Andrade
-* Rafael Pierre Martins
 * Daniel Estevam Pacheco de Souza
 * Gabriel Augusto Souza Borges
+* Lucas Machado de Oliveira Andrade
 * Pedro Rabelo de Freitas
+* Rafael Pierre Martins
 
 ## Professores responsáveis
 
-* João
-* Simone
+* Amália Soares Vieira de Vasconcelos
+* Joao Luiz Silva Barbosa
+* Rommel Vieira Carneiro
+* Simone Alves Nogueira
 
 ## Instruções de utilização
 

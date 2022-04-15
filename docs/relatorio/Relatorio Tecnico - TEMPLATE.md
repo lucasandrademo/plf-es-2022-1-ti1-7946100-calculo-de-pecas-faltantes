@@ -1,21 +1,32 @@
 # Informações do Projeto
-`TÍTULO DO PROJETO`  
+`CÁLCULO DE PEÇAS FALTANTES`  
 
-......  COLOQUE AQUI O SEU TEXTO ......
+Kiichiro Toyota foi um empresário que deu início ao processo de Just In Time. Esse processo revolucionou a indústria como conhecemos e permitiu que qualquer empresa, independente de seu tamanho, minimize seu estoque ao máximo.
 
-`CURSO` 
+Entretanto, nem todas as empresas possuem políticas e infraestruturas que permitem a utilização completa do sistema Just In Time. Para essas empresas, é necessário minimizar ao máximo o estoque e controlar seu sistema de trânsito, compras e construção. Logo, o sistema de cálculo de peças faltantes entra como uma possibilidade de entregar a melhor relação possível para a sua empresa.
 
-......  COLOQUE AQUI O SEU TEXTO ......
+Portanto, o grande problema que essas empresas enfrentam é descobrir quanto e quando comprar, de forma que se obtenha os menores gastos e estoque possíveis, sem afetar a construção e sem deixar faltar qualquer peça no meio da produção.
+
+O projeto, então, visa criar um software utilizando apenas tecnologias de front-end, com o objetivo de entregar um aumento na facilidade de gestão de gastos e controle de estoque.
+
+<br/>
+
+`ENGENHARIA DE SOFTWARE` 
+
+Assim como descrito na página inicial do curso, a engenharia de Software da Pontífica Universidade Católica de Minas Gerais (PUC Minas) possui o objetivo de formar profissionais com base sólida em Ciência da Computação, Matemática e Produção.
+
+A disciplina de Trabalho Interdisciplinar: Aplicações WEB, ministrada pelos professores Amália Soares Vieira de Vasconcelos, Joao Luiz Silva Barbosa, Rommel Vieira Carneiro e Simone Alves Nogueira, visa em seu projeto final, a construção do conhecimento técnico aplicável de seus alunos, de forma que ocorra a entrega de um projeto completo capaz de resolver problemas reais.
 
 ## Participantes
 
-......  COLOQUE AQUI O SEU TEXTO ......
+O projeto foi pensado, criado e desenvolvido por estudantes de engenharia de software do primeiro período noturno da PUC Minas.
 
-> Inclua a lista dos membros da equipe com seus nomes completos.
->
-> Os membros do grupo são: 
-> - Fulano da Silva
-> - Ciclano Albuquerque
+> Os membros do grupo são:
+> - Daniel Estevam Pacheco de Souza
+> - Gabriel Augusto Souza Borges
+> - Lucas Machado de Oliveira Andrade
+> - Pedro Rabelo de Freitas
+> - Rafael Pierre Martins
 
 # Estrutura do Documento
 
@@ -41,7 +52,7 @@
   - [Divisão de Papéis](#divisão-de-papéis)
   - [Ferramentas](#ferramentas)
   - [Controle de Versão](#controle-de-versão)
-- [**############## SPRINT 1 ACABA AQUI #############**](#-sprint-1-acaba-aqui-)
+<!-- - [**############## SPRINT 1 ACABA AQUI #############**](#-sprint-1-acaba-aqui-)
 - [Projeto da Solução](#projeto-da-solução)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
   - [Arquitetura da solução](#arquitetura-da-solução)
@@ -49,7 +60,7 @@
   - [Plano de Testes](#plano-de-testes)
   - [Ferramentas de Testes (Opcional)](#ferramentas-de-testes-opcional)
   - [Registros de Testes](#registros-de-testes)
-- [Referências](#referências)
+- [Referências](#referências) -->
 
 
 # Introdução
@@ -385,10 +396,10 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 >
 > ![Exemplo de Wireframe](images/Github-Workflow.png)
 
-# **############## SPRINT 1 ACABA AQUI #############**
+<!-- # **############## SPRINT 1 ACABA AQUI #############** -->
 
 
-# Projeto da Solução
+<!-- # Projeto da Solução
 
 ......  COLOQUE AQUI O SEU TEXTO ......
 
@@ -418,10 +429,10 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 > 
 > **Exemplo do diagrama de Arquitetura**:
 > 
-> ![Exemplo de Arquitetura](images/arquitetura-exemplo.png)
+> ![Exemplo de Arquitetura](images/arquitetura-exemplo.png) -->
 
 
-# Avaliação da Aplicação
+<!-- # Avaliação da Aplicação
 
 ......  COLOQUE AQUI O SEU TEXTO ......
 
@@ -460,16 +471,14 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 > Discorra sobre os resultados do teste. Ressaltando pontos fortes e
 > fracos identificados na solução. Comente como o grupo pretende atacar
 > esses pontos nas próximas iterações. Apresente as falhas detectadas e
-> as melhorias geradas a partir dos resultados obtidos nos testes.
+> as melhorias geradas a partir dos resultados obtidos nos testes. -->
 
 
 # Referências
 
-......  COLOQUE AQUI O SEU TEXTO ......
+Abaixo seguem links utilizados para fundamentar a construção desse trabalho.
 
-> Inclua todas as referências (livros, artigos, sites, etc) utilizados
-> no desenvolvimento do trabalho.
-> 
 > **Links Úteis**:
 > - [Formato ABNT](https://www.normastecnicas.com/abnt/trabalhos-academicos/referencias/)
 > - [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
+> - [Engenharia de Software PUC Minas](https://www.pucminas.br/unidade/praca-da-liberdade/ensino/graduacao/Paginas/Engenharia-de-Software.aspx)
