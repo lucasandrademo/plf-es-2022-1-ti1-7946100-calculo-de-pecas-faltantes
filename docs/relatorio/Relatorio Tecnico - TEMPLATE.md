@@ -1,13 +1,9 @@
 # Informações do Projeto
 `CÁLCULO DE PEÇAS FALTANTES`  
 
-Kiichiro Toyota foi um empresário que deu início ao processo de Just In Time. Esse processo revolucionou a indústria como conhecemos e permitiu que qualquer empresa, independente de seu tamanho, minimize seu estoque ao máximo.
+O projeto visa criar um software, utilizando apenas tecnologias de front-end, com o objetivo de entregar um aumento na facilidade de gestão de gastos e controle de estoque.
 
-Entretanto, nem todas as empresas possuem políticas e infraestruturas que permitem a utilização completa do sistema Just In Time. Para essas empresas, é necessário minimizar ao máximo o estoque e controlar seu sistema de trânsito, compras e construção. Logo, o sistema de cálculo de peças faltantes entra como uma possibilidade de entregar a melhor relação possível para a sua empresa.
-
-Portanto, o grande problema que essas empresas enfrentam é descobrir quanto e quando comprar, de forma que se obtenha os menores gastos e estoque possíveis, sem afetar a construção e sem deixar faltar qualquer peça no meio da produção.
-
-O projeto, então, visa criar um software utilizando apenas tecnologias de front-end, com o objetivo de entregar um aumento na facilidade de gestão de gastos e controle de estoque.
+Dessa forma o setor industríal pode reduzir os custos e ganhar performance na construção de seus produtos, evitando perdas por alto estoque ou falta de peças necessárias para completar um determinado serviço.
 
 <br/>
 
@@ -65,74 +61,54 @@ O projeto foi pensado, criado e desenvolvido por estudantes de engenharia de sof
 
 # Introdução
 
+Kiichiro Toyota foi um empresário que deu início ao processo de Just In Time. Esse processo revolucionou a indústria como conhecemos e permitiu que qualquer empresa, independente de seu tamanho, minimize seu estoque ao máximo. Isso é positivo, pois estoques possuem custos elevados em sua manutenção, logo a sua redução permite uma diminuição dos gastos, aumento dos lucros e possibilidade de verder o produto de forma mais acessível ao consumidor, criando um melhor poder de compra para a população que usufrui dos produtos criados pela indústria.
+
+Foi observado, também, em alguns momentos na história, táticas que visam o aumento do estoque, crendo que basta produzir mais, pois o mercado consumidor é capaz de acompanhar o aumento de produção. Entretanto, essas táticas podem ocasionar crises econômicas na empresa ou no mundo, assim como foi presenciado nos Estados Unidos, em 1929, pelo American Way Of Life.
+
+Entretanto, nem todas as empresas possuem políticas e infraestruturas que permitem a utilização completa do sistema Just In Time. Para essas empresas, o objetivo é se aproximar ao máximo do sistema criado por Toyota, para isso, é necessário minimizar ao máximo o estoque e controlar seu sistema de trânsito, compras e construção, gerando assim a máxima redução possível nos gastos com estoque, desperdício e atrasos por falta de materiais necessários.
+
+Somado a isso, há um aumento na necessidade de respostas rápidas e investimentos em sistemas mais modernos, que ofereçam aos consumidores o produto que eles desejam. Nesse momento da história, o mercado alterou seu pensamento, a ideia de que criar a necessidade para seu produto foi substituída pela de entregar ao consumidor o que ele de fato precisa ou almeja.
+
+Logo, surge um aumento constante na importância da gestão competende de estoque, não basta ter todas as peças necessárias em excesso em centrais de distribuições gigantescas, é necessário possuir somento aquilo que será utilizado naquele momento, sem que deixe faltar qualquer peça ou prejudicar qualquer construção.
+
 ## Problema
 
-......  COLOQUE AQUI O SEU TEXTO ......
-
-> Nesse momento você deve apresentar o problema que a sua aplicação deve
-> resolver. No entanto, não é a hora de comentar sobre a aplicação.
-> Descreva também o contexto em que essa aplicação será usada, se
-> houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de
-> fato existir, pois ainda não é a hora de apresentar requisitos
-> detalhados ou projetos.
->
-> Nesse momento, o grupo pode optar por fazer uso
-> de ferramentas como Design Thinking, que permite um olhar de ponta a
-> ponta para o problema.
->
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Portanto, o grande problema que essas empresas enfrentam é descobrir quanto e quando comprar, de forma que se obtenha os menores gastos e estoque possíveis, sem afetar a construção e sem deixar faltar qualquer peça no meio da produção.
 
 ## Objetivos
 
-......  COLOQUE AQUI O SEU TEXTO ......
+O cálculo de peças faltantes vem com o objetivo de se tornar uma ferramente de software que auxilie nesse sistema de gestão. Trazendo as informações necessárias para que diversos setores da indústria possam trabalhar de forma integrada sem a necessidade da comunição informal para efetuar seu trabalho de forma competente.
 
-> Aqui você deve descrever os objetivos do trabalho indicando que o
-> objetivo geral é desenvolver um software para solucionar o problema
-> apresentado acima. Apresente também alguns (pelo menos 2) objetivos
-> específicos dependendo de onde você vai querer concentrar a sua
-> prática investigativa, ou como você vai aprofundar no seu trabalho.
-> 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Entre esses setores, podem ser mencionados o administrativo, o setor de compras, estoque e os gestores.
+
+Entre as informações necessárias para o software, estão as telas de cadastros e de informações finais.
+
+* Cadastros:
+	* Fornecer uma forma de cadastrar os produtos vendidos e as peças necessárias para criação desses produtos;
+	* Fornecer um sitema responsivo, para uso em Tablet e computadores que permita alterações simples e rápidas nas quantidades de produtos em estoque;
+	* Permitir que o usuário efetue a importação de dados de compras dos consumidores finais, assim como a quantidade comprada e a data prevista para a entrega.
+
+* Informações Finais:
+	* Fornecer uma tabela com todos os materiais faltantes para o dia de hoje, assim como para os próximos dias;
+	* Informar ao usuário a quantidade de materiais faltantes para cada dia;
+	* Informar o que é possível construir na data de hoje.
 
 ## Justificativa
 
-......  COLOQUE AQUI O SEU TEXTO ......
+Em um estudo de caso feito por William da Silva Barbosa, focado na área de administração mostrou como a gestão de estoque pode influenciar nos ganhos de uma empresa.
 
-> Descreva a importância ou a motivação para trabalhar com esta aplicação
-> que você escolheu. Indique as razões pelas quais você escolheu seus
-> objetivos específicos ou as razões para aprofundar em certos aspectos
-> do software.
-> 
-> O grupo de trabalho pode fazer uso de questionários, entrevistas e
-> dados estatísticos, que podem ser apresentados, com o objetivo de
-> esclarecer detalhes do problema que será abordado pelo grupo.
->
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Nesse aspecto, a empresa que não autorizou a divulgação do nome observou um total de R$150.000.000,00 estocados, sendo que 10% desse valor eram em produtos obsoletos.
+
+Além disso, parâmetros incorretos nos cálculos de compras (MRP) informavam aos compradores a necessidade de comprar quantidades excessivas ou inferiores ao que de fato era desejado.
+
+Logo, há uma observação de que a gestão competente de estoque pode ser um fator fundamental para o crescimento de uma empresa, para isso, softwares que auxiliem e tragam uma visualição de fácil utilização e acesso se tornam necessários para facilitar esse crescimento. 
 
 ## Público-Alvo
 
-......  COLOQUE AQUI O SEU TEXTO ......
+Para esse projeto, foi estabelecido como público alvo, pequenas e médias empresas que visam um crescimento econômico e uma redução nos gastos.
 
-> Descreva quem serão as pessoas que usarão a sua aplicação indicando os
-> diferentes perfis. O objetivo aqui não é definir quem serão os
-> clientes ou quais serão os papéis dos usuários na aplicação. A ideia
-> é, dentro do possível, conhecer um pouco mais sobre o perfil dos
-> usuários: conhecimentos prévios, relação com a tecnologia, relações
-> hierárquicas, etc.
->
-> Adicione informações sobre o público-alvo por meio de uma descrição
-> textual, ou diagramas de personas, mapa de stakeholders, ou como o
-> grupo achar mais conveniente.
-> 
-> **Links Úteis**:
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
- 
+Esse público alvo foi definido, pois, a são essa empresas que possuem como maior ponto fraco a gestão de estoque e de compras de materiais. Afinal sua gestão, muitas vezes é feita por meio de ferramentas de edição de planilhas, sem automação e com alta possibilidade de erros humanos.
+
 # Especificações do Projeto
 
 ......  COLOQUE AQUI O SEU TEXTO ......
@@ -478,7 +454,8 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 Abaixo seguem links utilizados para fundamentar a construção desse trabalho.
 
-> **Links Úteis**:
-> - [Formato ABNT](https://www.normastecnicas.com/abnt/trabalhos-academicos/referencias/)
-> - [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
-> - [Engenharia de Software PUC Minas](https://www.pucminas.br/unidade/praca-da-liberdade/ensino/graduacao/Paginas/Engenharia-de-Software.aspx)
+- [Formato ABNT](https://www.normastecnicas.com/abnt/trabalhos-academicos/referencias/)
+- [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
+- [Engenharia de Software PUC Minas](https://www.pucminas.br/unidade/praca-da-liberdade/ensino/graduacao/Paginas/Engenharia-de-Software.aspx)
+- [Barbosa, William da S. REDUÇÃO DE CUSTOS E SEU IMPACTO NA GESTÃO DE ESTOQUE, ano 2014](https://cepein.femanet.com.br/BDigital/arqTccs/1111390153.pdf)
+

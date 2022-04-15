@@ -29,4 +29,4 @@ Portanto, o grande problema que essas empresas enfrentam é descobrir quanto e q
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+Esse tópico está em processo de criação e será atualizado após finalização do software.
