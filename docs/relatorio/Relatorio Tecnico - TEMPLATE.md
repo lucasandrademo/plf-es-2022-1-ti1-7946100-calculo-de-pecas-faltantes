@@ -17,12 +17,13 @@ A disciplina de Trabalho Interdisciplinar: Aplicações WEB, ministrada pelos pr
 
 O projeto foi pensado, criado e desenvolvido por estudantes de engenharia de software do primeiro período noturno da PUC Minas.
 
-> Os membros do grupo são:
-> - Daniel Estevam Pacheco de Souza
-> - Gabriel Augusto Souza Borges
-> - Lucas Machado de Oliveira Andrade
-> - Pedro Rabelo de Freitas
-> - Rafael Pierre Martins
+Sendo eles:
+
+- Daniel Estevam Pacheco de Souza
+- Gabriel Augusto Souza Borges
+- Lucas Machado de Oliveira Andrade
+- Pedro Rabelo de Freitas
+- Rafael Pierre Martins
 
 # Estrutura do Documento
 
