@@ -7,7 +7,8 @@ Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.
 * Lucas Machado de Oliveira Andrade
 * Rafael Pierre Martins
 * Daniel Estevam Pacheco de Souza
-* Nome completo do aluno 4
+* Gabriel Augusto Souza Borges
+* Pedro Rabelo de Freitas
 
 ## Professores responsáveis
 
