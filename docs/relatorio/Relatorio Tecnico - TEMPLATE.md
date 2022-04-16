@@ -318,8 +318,23 @@ Logo, baseado na pesquisa e na premissa anterior, cada membro possui as responsa
 	* Gabriel Augusto Souza Borges
 	* Lucas Machado de Oliveira Andrade
 	* Pedro Rabelo de Freitas
-	* Rafael Pierre Martins
+	* Rafael Pierre 
 
+Com o objetivo de organizar as divisões das tarefas no projeto, o Project do GitHub foi escolhido como ferramenta principal, estruturado nos seguintes campos:
+
+* **Backlog**: Implementações que necessitam de implementação, mas não possuem nenhum desenvolvedor atrelado a ela e não necessariamente será efetuada durante a sprint;
+
+* **To do**: Tarefa que já foi definida por quem deve ser implementada e deve ser entregue na sprint;
+
+* **In progress**: Tarefa que está sendo efetuada pelo responsável, mas ainda não está finalizada;
+
+* **Homologação**: Tarefa que está pronta, mas ainda está passando por testes e verificações, antes de receber o Pull Request para a master, logo, ela só existe no ambiente de homologação;
+
+* **Done**: Tarefa completa, que recebeu um Pull Request para a master, ou que não precisa de nenhuma outra ação afetuada.
+
+O quadro abaixo apresenta o sistema definido para gestão do grupo.
+
+![Quadro Projects](images/projects.png)
 
 ## Ferramentas
 
@@ -327,8 +342,9 @@ Logo, baseado na pesquisa e na premissa anterior, cada membro possui as responsa
 | Ambiente  | Plataforma              |Link de Acesso |
 |-----------|-------------------------|---------------|
 | Processo de Design Thinkgin  | Miro |  https://miro.com/app/board/uXjVOA2ChQA=/ | 
-| Repositório de código e Gerenciamento do Projeto | GitHub | https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti1-7946100-calculo-de-pecas-faltantes | 
-| Hospedagem do site |  |   | 
+| Repositório de código | GitHub | https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti1-7946100-calculo-de-pecas-faltantes | 
+| Gerenciamento do Projeto | GitHub Projects | https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti1-7946100-calculo-de-pecas-faltantes/projects/1 | 
+| Hospedagem do site | GitHub Pages | http://pecas-faltantes.com/ | 
 | Protótipo Interativo |  |  | 
 | Ferramentas de comunicação | Discord | Servidor Privado para as Dailys e Sprint Review |
 
@@ -351,10 +367,14 @@ O sistema de versionamento de código é efetuado por meio de Pull Requests e Is
 * Issue:
 	* Criação de uma nova branch para cada issue;
 	* Merge em homologação após finalização da issue;
-	* Nome "iss" + "iniciais o desenvolvedor" + "-" + "nome card no project";
+	* Nome "numero issue" + "-" + "nome card no project";
 	* utilizaram o sistema de labels descrito na imagem abaixo:
 
 ![Labels Issue](images/labels-issue.png)
+
+Logo, o workflow relacionado ao sistema de branches pode ser observado na imagem a seguir:
+
+![Workflow Branchs](images/sistema-branch.png)
 
 <!-- # **############## SPRINT 1 ACABA AQUI #############** -->
 
