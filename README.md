@@ -4,11 +4,7 @@
 
 Kiichiro Toyota foi um empresário que deu início ao processo de Just In Time. Esse processo revolucionou a indústria como conhecemos e permitiu que qualquer empresa, independente de seu tamanho, minimize seu estoque ao máximo.
 
-<br/>
-
 Entretanto, nem todas as empresas possuem políticas e infraestruturas que permitem a utilização completa do sistema Just In Time. Para essas empresas, é necessário minimizar ao máximo o estoque e controlar seu sistema de trânsito, compras e construção. Logo, o sistema de cálculo de peças faltantes entra como uma possibilidade de entregar a melhor relação possível para a sua empresa.
-
-<br/>
 
 Portanto, o grande problema que essas empresas enfrentam é descobrir quanto e quando comprar, de forma que se obtenha os menores gastos e estoque possíveis, sem afetar a construção e sem deixar faltar qualquer peça no meio da produção.
 
