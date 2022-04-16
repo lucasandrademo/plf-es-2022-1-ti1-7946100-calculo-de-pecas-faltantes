@@ -275,103 +275,86 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 # Metodologia
 
-......  COLOQUE AQUI O SEU TEXTO ......
+Esse projeto utiliza de frameworks embasados no manifesto ágil, com o objetivo de gerir de forma eficaz o projeto e criar uma infraestrutura que permita que todos os envolvidos contemplem todo o sistema utilizado.
 
-> Nesta parte do documento, você deve apresentar a metodologia 
-> adotada pelo grupo, descrevendo o processo de trabalho baseado nas metodologias ágeis, 
-> a divisão de papéis e tarefas, as ferramentas empregadas e como foi realizada a
-> gestão de configuração do projeto via GitHub.
->
-> Coloque detalhes sobre o processo de Design Thinking e a implementação do Framework Scrum seguido
-> pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar
-> o andamento do projeto, a execução das tarefas e o status de desenvolvimento
-> da solução.
-> 
-> **Links Úteis**:
-> - [Tutorial Trello](https://trello.com/b/8AygzjUA/tutorial-trello)
-> - [Gestão ágil de projetos com o Trello](https://www.youtube.com/watch?v=1o9BOMAKBRE)
-> - [Gerência de projetos - Trello com Scrum](https://www.youtube.com/watch?v=DHLA8X_ujwo)
-> - [Tutorial Slack](https://slack.com/intl/en-br/)
+Com esse pensamento é possível criar um projeto transparente e com grande possibilidade de avanços em um curto período de tempo.
+
+Inicialmente, visando a ideia de Design Thinking, foi utilizado o sistema de gestão do Miro, respeitando os layouts disponibilizados.
+
+Utilizando essa ferramento foi possível criar o escopo inicial do projeto a partir da criação do Mapa de Priorização de Ideias.
+
+Para Gerir a aplicação, a principal ferramenta utilizada foi o GitHub. Com ele é possível verssionar os códigos na aba Code, assim como criar um sistema de quadro de sinalização de fluxo de produção na aba Projects.
+
+Utilizando o sistema de Pull Requests e Issues o Project criado pode ser dinâmico, de forma que o progresso das tarefas são atualizados em conjunto com o desenvolvimento. Além disso, o sistema de Pull Request permite que um desenvolvedor verifique o código do outro e solicite melhorias ou modificações, trazendo mais confiabilidade ao código e um aumento do conhecimento dos envolvidos na aplicação como todo.
+
+Esse sistema será utilizado como uma ferramenta para implementação do Scrum, uma estrutura baseada no manifesto ágil, que visa dividir e priorizar as tarefas, além de estruturar um acompanhamento transparente para que todos possam observar as melhorias e avanços do projeto em tempo de execução.
+
+As sprints do projeto são divididas em 4 grandes sprints com o duração de 4 semanas. Entretanto, haverá uma review interna e divisão das tarefas contemplando sprints de uma semana, isso é necessário para manter um acompanhamento constante e de qualidade do projeto.
+
+Para o acompanhamento das evoluções, além do Project, serão feitas reuniões diárias em que os desenvolvedores podem exibir para todos seu trabalho e suas dificuldades, com o objetivo de que os problemas sejam solucionados rapidamente e de forma eficaz.
 
 ## Divisão de Papéis
 
-......  COLOQUE AQUI O SEU TEXTO ......
+Com o objetivo de identificar os papéis de cada membro do grupo foi criado um formulário questionando o desejo de cada membro em ocupar um determinado cargo, assim como quem ele acredita ser o melhor integrante para cada papel.
 
-> Apresente a divisão de papéis e tarefas entre os membros do grupo.
->
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+Além disso, todos os integrantes terão responsabilidades de desenvolvimento, logo todos irão participar do Development Team.
+
+Logo, baseado na pesquisa e na premissa anterior, cada membro possui as responsabilidades de acordo com a descrição abaixo:
+
+* **Scrum Master**
+	*
+
+* **Product Owner:**
+	*
+
+* **Design UX**
+	*
+
+* **Senior Development**
+	*
+
+* **Development Team:**
+	* Daniel Estevam Pacheco de Souza
+	* Gabriel Augusto Souza Borges
+	* Lucas Machado de Oliveira Andrade
+	* Pedro Rabelo de Freitas
+	* Rafael Pierre Martins
 
 
 ## Ferramentas
 
-......  COLOQUE AQUI O SEU TEXTO - SIGA O EXEMPLO DA TABELA ABAIXO  ......
 
 | Ambiente  | Plataforma              |Link de Acesso |
 |-----------|-------------------------|---------------|
-|Processo de Design Thinkgin  | Miro |  https://miro.com/XXXXXXX | 
-|Repositório de código | GitHub | https://github.com/XXXXXXX | 
-|Hospedagem do site | Heroku |  https://XXXXXXX.herokuapp.com | 
-|Protótipo Interativo | MavelApp ou Figma | https://figma.com/XXXXXXX | 
+| Processo de Design Thinkgin  | Miro |  https://miro.com/app/board/uXjVOA2ChQA=/ | 
+| Repositório de código e Gerenciamento do Projeto | GitHub | https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti1-7946100-calculo-de-pecas-faltantes | 
+| Hospedagem do site |  |   | 
+| Protótipo Interativo |  |  | 
+| Ferramentas de comunicação | Discord | Servidor Privado para as Dailys e Sprint Review |
 
->
-> Liste as ferramentas empregadas no desenvolvimento do
-> projeto, justificando a escolha delas, sempre que possível.
-> 
-> As ferramentas empregadas no projeto são:
-> 
-> - Editor de código.
-> - Ferramentas de comunicação
-> - Ferramentas de diagramação
-> - Plataforma de hospedagem
-> 
-> O editor de código foi escolhido porque ele possui uma integração com o
-> sistema de versão. As ferramentas de comunicação utilizadas possuem
-> integração semelhante e por isso foram selecionadas. Por fim, para criar
-> diagramas utilizamos essa ferramenta por melhor captar as
-> necessidades da nossa solução.
-> 
-> **Links Úteis - Hospedagem**:
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Crie seu Site com o HostGator](https://www.hostgator.com.br/como-publicar-seu-site)
-> - [GoDady](https://br.godaddy.com/how-to)
-> - [GitHub Pages](https://pages.github.com/)
 
 ## Controle de Versão
 
-......  COLOQUE AQUI O SEU TEXTO ......
+O sistema de versionamento de código é efetuado por meio de Pull Requests e Issues.
 
-> Discuta como a configuração do projeto foi feita na ferramenta de
-> versionamento escolhida. Exponha como a gerência de tags, merges,
-> commits e branchs é realizada. Discuta como a gerência de issues foi
-> realizada.
-> A ferramenta de controle de versão adotada no projeto foi o
-> [Git](https://git-scm.com/), sendo que o [Github](https://github.com)
-> foi utilizado para hospedagem do repositório `upstream`.
-> 
-> O projeto segue a seguinte convenção para o nome de branchs:
-> 
-> - `master`: versão estável já testada do software
-> - `unstable`: versão já testada do software, porém instável
-> - `testing`: versão em testes do software
-> - `dev`: versão de desenvolvimento do software
-> 
-> Quanto à gerência de issues, o projeto adota a seguinte convenção para
-> etiquetas:
-> 
-> - `bugfix`: uma funcionalidade encontra-se com problemas
-> - `enhancement`: uma funcionalidade precisa ser melhorada
-> - `feature`: uma nova funcionalidade precisa ser introduzida
->
-> **Links Úteis**:
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
-> - [5 Git Workflows & Branching Strategy to deliver better code](https://zepel.io/blog/5-git-workflows-to-improve-development/)
->
-> **Exemplo - GitHub Feature Branch Workflow**:
->
-> ![Exemplo de Wireframe](images/Github-Workflow.png)
+* Branch:
+	* `master`: versão final do projeto;
+	* `homologacao`: versão de testes, pode ocorrer inconsistências com a master;
+	* `iss`: branches para o desenvolvedor modificar e criar códigos.
+
+* Pull Request:
+	* Ocorre uma vez por semana;
+	* Merge das branches iss para a master;
+	* Responsabilidade do Senior Development.
+	* utilizam o sistema de labels das issues
+
+* Issue:
+	* Criação de uma nova branch para cada issue;
+	* Merge em homologação após finalização da issue;
+	* Nome "iss" + "iniciais o desenvolvedor" + "-" + "nome card no project";
+	* utilizaram o sistema de labels descrito na imagem abaixo:
+
+![Labels Issue](images/labels-issue.png)
 
 <!-- # **############## SPRINT 1 ACABA AQUI #############** -->
 
@@ -459,4 +442,5 @@ Abaixo seguem links utilizados para fundamentar a construção desse trabalho.
 - [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
 - [Engenharia de Software PUC Minas](https://www.pucminas.br/unidade/praca-da-liberdade/ensino/graduacao/Paginas/Engenharia-de-Software.aspx)
 - [Barbosa, William da S. REDUÇÃO DE CUSTOS E SEU IMPACTO NA GESTÃO DE ESTOQUE, ano 2014](https://cepein.femanet.com.br/BDigital/arqTccs/1111390153.pdf)
+- [Manifesto Ágil](https://agilemanifesto.org/)
 
