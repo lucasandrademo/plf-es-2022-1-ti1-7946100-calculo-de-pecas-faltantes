@@ -302,16 +302,13 @@ Além disso, todos os integrantes terão responsabilidades de desenvolvimento, l
 Logo, baseado na pesquisa e na premissa anterior, cada membro possui as responsabilidades de acordo com a descrição abaixo:
 
 * **Scrum Master**
-	*
+	* Lucas Machado de Oliveira Andrade
 
 * **Product Owner:**
-	*
+	* Rafael Pierre
 
 * **Design UX**
-	*
-
-* **Senior Development**
-	*
+	* Gabriel Augusto Souza Borges
 
 * **Development Team:**
 	* Daniel Estevam Pacheco de Souza
@@ -345,7 +342,7 @@ O quadro abaixo apresenta o sistema definido para gestão do grupo.
 | Repositório de código | GitHub | https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti1-7946100-calculo-de-pecas-faltantes | 
 | Gerenciamento do Projeto | GitHub Projects | https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti1-7946100-calculo-de-pecas-faltantes/projects/1 | 
 | Hospedagem do site | GitHub Pages | http://pecas-faltantes.com/ | 
-| Protótipo Interativo |  |  | 
+| Protótipo Interativo | Figma | https://www.figma.com/file/QtHZvvj5LAdZmVEdyoT4Fe/Stable-Tables-(Community)?node-id=0%3A1 | 
 | Ferramentas de comunicação | Discord | Servidor Privado para as Dailys e Sprint Review |
 
 
@@ -361,13 +358,13 @@ O sistema de versionamento de código é efetuado por meio de Pull Requests e Is
 * Pull Request:
 	* Ocorre uma vez por semana;
 	* Merge das branches iss para a master;
-	* Responsabilidade do Senior Development.
+	* Responsabilidade do Scrum Master.
 	* utilizam o sistema de labels das issues
 
 * Issue:
 	* Criação de uma nova branch para cada issue;
 	* Merge em homologação após finalização da issue;
-	* Nome "numero issue" + "-" + "nome card no project";
+	* Nome "username" + "/" + "issue" + "número do issue";
 	* utilizaram o sistema de labels descrito na imagem abaixo:
 
 ![Labels Issue](images/labels-issue.png)
@@ -463,4 +460,3 @@ Abaixo seguem links utilizados para fundamentar a construção desse trabalho.
 - [Engenharia de Software PUC Minas](https://www.pucminas.br/unidade/praca-da-liberdade/ensino/graduacao/Paginas/Engenharia-de-Software.aspx)
 - [Barbosa, William da S. REDUÇÃO DE CUSTOS E SEU IMPACTO NA GESTÃO DE ESTOQUE, ano 2014](https://cepein.femanet.com.br/BDigital/arqTccs/1111390153.pdf)
 - [Manifesto Ágil](https://agilemanifesto.org/)
-
