@@ -218,7 +218,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 > fazer junto com os membros de sua equipe.
 >
 ### Siga o link do Figma para vizualizar melhor o fluxo de usuário ->:
-<a href="https://www.figma.com/file/QtHZvvj5LAdZmVEdyoT4Fe/Stable-Tables-(Community)?node-id=0%3A1"></a>
+<a href="https://www.figma.com/file/QtHZvvj5LAdZmVEdyoT4Fe/Stable-Tables-(Community)?node-id=0%3A1">Link do figma</a>
 > 
 >
 > **Fluxo de usuário**:
