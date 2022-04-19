@@ -26,3 +26,39 @@ Portanto, o grande problema que essas empresas enfrentam é descobrir quanto e q
 ## Instruções de utilização
 
 Esse tópico está em processo de criação e será atualizado após finalização do software.
+
+## Requisitos
+
+> Pode-se considerar que um requisito de software
+> é toda abstração de um recurso, funcionalidade
+> ou resultado esperado de um sistema.
+> O processo de levantamento de requisitos é
+> responsável por identificar todas as necessidades
+> e demandas na produção de um software.
+> Dessa forma, é possível perceber a importância da
+> etapa de levantamento de requisitos. Por isso
+> os requisitos são divididos em duas categorias:
+> Os funcionais e não funcionais.
+
+## Requisitos funcionais
+Os requisitos funcionais são features, funções e aspectos do software que o cliente irá exigir para o time de desenvolvimento.
+No nosso caso, para o projeto de peças faltantes, teríamos os seguintes requisitos funcionais:
+
+ - Sistema de manejamento de estoque para manter o mínimo de peças possíveis
+ - Persistência de dados
+ - Input de dados através de planilhas
+ - Telas de Cadastro
+ - Telas de itens cadastrados
+ - Tela de estoque
+ - Tela de peças faltantes
+
+## Requisitos não funcionais
+Os requisitos não funcionais são funções que serão necessárias para implementar os requisitos funcionais, mas que não serão
+explicitamente pedidas pelo cliente.
+No nosso caso, para o projeto de peças faltantes, teríamos os seguintes requisitos não funcionais:
+
+- Persistir os dados utilizando local storage
+- Responsividade
+- Telas modeladas tanto para PC quanto Tablet
+- Design limpo e intuitivo
+- Design das telas que serão acessadas pelos operadores com grandes ícones, para facilitar os cliques.
