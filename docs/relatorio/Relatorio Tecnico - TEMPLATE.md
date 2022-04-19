@@ -268,9 +268,14 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 > - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
 > - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
 > 
-> **Exemplo**:
+> **Wireframes:**:
 > 
-> ![Exemplo de Wireframe](images/wireframe-example.png)
+> ![Exemplo de Wireframe](/images/cadastro-produto-desktop.png)
+> ![Exemplo de Wireframe](/images/cadastro-produto-mobile.png)
+> ![Exemplo de Wireframe](/images/cadastro-peca-desktop.png)
+> ![Exemplo de Wireframe](/images/cadastro-peca-mobile.png)
+> ![Exemplo de Wireframe](/images/estoque.png)
+> ![Exemplo de Wireframe](/images/faltantes.png)
 
 
 # Metodologia
