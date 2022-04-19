@@ -248,9 +248,33 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 > - [User Flow vs Site Maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
 > - [Top 25 User Flow Tools & Templates for Smooth](https://www.mockplus.com/blog/post/user-flow-tools)
 >
-> **Exemplo**:
+> **Fluxo de usuário**:
 > 
-> ![Exemplo de UserFlow](images/userflow.jpg)
+<p style="align: center;">
+<img src="./images/frame1.png">
+</p>
+
+<p style="align: center;">
+<img src="./images/frame2.png">
+</p>
+
+<p style="align: center;">
+<img src="./images/frame3.png">
+</p>
+
+<p style="align: center;">
+<img src="./images/frame5.png">
+</p>
+
+<p style="align: center;">
+<img src="./images/frame6.png">
+</p>
+
+<p style="align: center;">
+<img src="./images/frame7.png">
+</p>
+
+
 
 
 ## Wireframes
@@ -272,11 +296,11 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 > 
 
 <p style="align: center;">
-<img src="./images/cadastro-produto-desktop.png">
+<img src="./images/cadastro-produtos-desktop.png">
 </p>
 
 <p style="align: center;">
-<img src="./images/cadastro-produto-mobile.png">
+<img src="./images/cadastro-produtos-mobile.png">
 </p>
 
 <p style="align: center;">
@@ -284,7 +308,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 </p>
 
 <p style="align: center;">
-<img src="./images/images/cadastro-peca-mobile.png">
+<img src="./images/cadastro-peca-mobile.png">
 </p>
 
 <p style="align: center;">
