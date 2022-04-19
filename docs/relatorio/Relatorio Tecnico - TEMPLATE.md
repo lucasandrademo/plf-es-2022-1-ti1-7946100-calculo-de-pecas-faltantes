@@ -66,7 +66,7 @@ Kiichiro Toyoda foi um empresário que deu início ao processo de Just In Time. 
 
 Foi observado, também, em alguns momentos na história, táticas que visam o aumento do estoque, crendo que basta produzir mais, pois o mercado consumidor é capaz de acompanhar o aumento de produção. Entretanto, essas táticas podem ocasionar crises econômicas na empresa ou no mundo, assim como foi presenciado nos Estados Unidos, em 1929, pelo American Way Of Life.
 
-Entretanto, nem todas as empresas possuem políticas e infraestruturas que permitem a utilização completa do sistema Just In Time. Para essas empresas, o objetivo é se aproximar ao máximo do sistema criado por Toyota, para isso, é necessário minimizar ao máximo o estoque e controlar seu sistema de trânsito, compras e construção, gerando assim a máxima redução possível nos gastos com estoque, desperdício e atrasos por falta de materiais necessários.
+Entretanto, nem todas as empresas possuem políticas e infraestruturas que permitem a utilização completa do sistema Just In Time. Para essas empresas, o objetivo é se aproximar ao máximo do sistema criado por Toyoda, para isso, é necessário minimizar ao máximo o estoque e controlar seu sistema de trânsito, compras e construção, gerando assim a máxima redução possível nos gastos com estoque, desperdício e atrasos por falta de materiais necessários.
 
 Somado a isso, há um aumento na necessidade de respostas rápidas e investimentos em sistemas mais modernos, que ofereçam aos consumidores o produto que eles desejam. Nesse momento da história, o mercado alterou seu pensamento, a ideia de que criar a necessidade para seu produto foi substituída pela de entregar ao consumidor o que ele de fato precisa ou almeja.
 
@@ -139,17 +139,6 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 |Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
 |Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
 
-> Apresente aqui as histórias de usuário que são relevantes para o
-> projeto de sua solução. As Histórias de Usuário consistem em uma
-> ferramenta poderosa para a compreensão e elicitação dos requisitos
-> funcionais e não funcionais da sua aplicação. Se possível, agrupe as
-> histórias de usuário por contexto, para facilitar consultas
-> recorrentes à essa parte do documento.
->
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-
 ## Requisitos
 
 As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
@@ -191,17 +180,13 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 # Projeto de Interface
 
-### Projeto consiste em 4 telas, Uma para cadastro de produto completo. Vamos usar o exemplo de uma bicileta. Uma outra tela para cadastro de partes de peças, como rodas, assentos etc. Outra tela para mostrar o estoque das peças de diferentes produtos e por fim uma para mostrar peças faltantes no estoque
+Projeto consiste em 4 telas, Uma para cadastro de produto completo. Vamos usar o exemplo de uma bicileta. Uma outra tela para cadastro de partes de peças, como rodas, assentos, entre outros. Outra tela para mostrar o estoque das peças de diferentes produtos e por fim uma para mostrar peças faltantes no estoque
 
 ## User Flow
 
-
-> Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor
-> mapear todo fluxo de telas do site ou app. Essa técnica funciona
-> para alinhar os caminhos e as possíveis ações que o usuário pode
-> fazer junto com os membros de sua equipe.
->
+Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de telas do site ou app. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
 ### Siga o link do Figma para vizualizar melhor o fluxo de usuário ->:
+
 <a href="https://www.figma.com/file/QtHZvvj5LAdZmVEdyoT4Fe/Stable-Tables-(Community)?node-id=0%3A1">Link do figma</a>
 > 
 >
@@ -231,19 +216,16 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 <img src="./images/frame7.png">
 </p>
 
-
-
-
 ## Wireframes
 
-> Wireframes são protótipos das telas da aplicação usados em design de interface para sugerir a
-> estrutura de um site web e seu relacionamentos entre suas
-> páginas. Um wireframe web é uma ilustração semelhante ao
-> layout de elementos fundamentais na interface.
-> 
-> 
-> **Wireframes:**:
-> 
+Wireframes são protótipos das telas da aplicação usados em design de interface para sugerir a
+estrutura de um site web e seu relacionamentos entre suas
+páginas. Um wireframe web é uma ilustração semelhante ao
+layout de elementos fundamentais na interface.
+ 
+ 
+**Wireframes:**:
+
 
 <p style="align: center;">
 <img src="./images/cadastro-produtos-desktop.png">
@@ -266,7 +248,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 </p>
 
 <p style="align: center;">
-<img src="./images/faltantes.png">
+<img src="./images/Faltantes.jpg">
 </p>
 
 # Metodologia
