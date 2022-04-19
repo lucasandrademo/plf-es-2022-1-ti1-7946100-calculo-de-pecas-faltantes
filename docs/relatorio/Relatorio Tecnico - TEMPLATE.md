@@ -62,7 +62,7 @@ Sendo eles:
 
 # Introdução
 
-Kiichiro Toyota foi um empresário que deu início ao processo de Just In Time. Esse processo revolucionou a indústria como conhecemos e permitiu que qualquer empresa, independente de seu tamanho, minimize seu estoque ao máximo. Isso é positivo, pois estoques possuem custos elevados em sua manutenção, logo a sua redução permite uma diminuição dos gastos, aumento dos lucros e possibilidade de verder o produto de forma mais acessível ao consumidor, criando um melhor poder de compra para a população que usufrui dos produtos criados pela indústria.
+Kiichiro Toyoda foi um empresário que deu início ao processo de Just In Time. Esse processo revolucionou a indústria como conhecemos e permitiu que qualquer empresa, independente de seu tamanho, minimize seu estoque ao máximo. Isso é positivo, pois estoques possuem custos elevados em sua manutenção, logo a sua redução permite uma diminuição dos gastos, aumento dos lucros e possibilidade de verder o produto de forma mais acessível ao consumidor, criando um melhor poder de compra para a população que usufrui dos produtos criados pela indústria.
 
 Foi observado, também, em alguns momentos na história, táticas que visam o aumento do estoque, crendo que basta produzir mais, pois o mercado consumidor é capaz de acompanhar o aumento de produção. Entretanto, essas táticas podem ocasionar crises econômicas na empresa ou no mundo, assim como foi presenciado nos Estados Unidos, em 1929, pelo American Way Of Life.
 
