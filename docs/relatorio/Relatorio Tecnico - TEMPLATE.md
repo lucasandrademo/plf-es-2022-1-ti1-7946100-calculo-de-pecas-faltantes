@@ -250,13 +250,30 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 > 
 > **Wireframes:**:
 > 
-> ![Exemplo de Wireframe](/images/cadastro-produto-desktop.png)
-> ![Exemplo de Wireframe](/images/cadastro-produto-mobile.png)
-> ![Exemplo de Wireframe](/images/cadastro-peca-desktop.png)
-> ![Exemplo de Wireframe](/images/cadastro-peca-mobile.png)
-> ![Exemplo de Wireframe](/images/estoque.png)
-> ![Exemplo de Wireframe](/images/faltantes.png)
 
+<p style="align: center;">
+<img src="./images/cadastro-produto-desktop.png">
+</p>
+
+<p style="align: center;">
+<img src="./images/cadastro-produto-mobile.png">
+</p>
+
+<p style="align: center;">
+<img src="./images/cadastro-peca-desktop.png">
+</p>
+
+<p style="align: center;">
+<img src="./images/images/cadastro-peca-mobile.png">
+</p>
+
+<p style="align: center;">
+<img src="./images/estoque.png">
+</p>
+
+<p style="align: center;">
+<img src="./images/faltantes.png">
+</p>
 
 # Metodologia
 
