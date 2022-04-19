@@ -266,7 +266,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 </p>
 
 <p style="align: center;">
-<img src="./images/cadastro-produto-completo-mobile.png">
+<img src="./images/produto-completo-mobile.png">
 </p>
 
 <p style="align: center;">
