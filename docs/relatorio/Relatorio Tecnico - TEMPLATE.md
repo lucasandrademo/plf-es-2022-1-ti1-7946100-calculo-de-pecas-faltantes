@@ -211,14 +211,13 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 ## User Flow
 
-......  INCLUA AQUI O DIAGRAMA COM O FLUXO DO USUÁRIO NA APLICAÇÃO ......
 
 > Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor
 > mapear todo fluxo de telas do site ou app. Essa técnica funciona
 > para alinhar os caminhos e as possíveis ações que o usuário pode
 > fazer junto com os membros de sua equipe.
 >
-> **Siga o link do Figma para vizualizar melhor o fluxo de usuário ->**:
+### Siga o link do Figma para vizualizar melhor o fluxo de usuário ->:
 <a href="https://www.figma.com/file/QtHZvvj5LAdZmVEdyoT4Fe/Stable-Tables-(Community)?node-id=0%3A1"></a>
 > 
 >
@@ -253,8 +252,6 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 ## Wireframes
 
-......  INCLUA AQUI OS WIREFRAMES DAS TELAS DA APLICAÇÃO COM UM BREVE DESCRITIVO ......
-
 > Wireframes são protótipos das telas da aplicação usados em design de interface para sugerir a
 > estrutura de um site web e seu relacionamentos entre suas
 > páginas. Um wireframe web é uma ilustração semelhante ao
@@ -269,7 +266,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 </p>
 
 <p style="align: center;">
-<img src="./images/cadastro-produtos-mobile.png">
+<img src="./images/cadastro-produto-completo-mobile.png">
 </p>
 
 <p style="align: center;">
