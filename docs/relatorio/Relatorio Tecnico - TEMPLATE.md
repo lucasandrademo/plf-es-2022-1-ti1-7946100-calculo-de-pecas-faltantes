@@ -132,13 +132,13 @@ As personas criadas foram embasadas nas entrevistas feitas com pessoas reais, im
 
 ## Histórias de Usuários
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
+Com base na análise das personas foram identificadas as seguintes histórias de usuários:
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
+|USUÁRIO|FUNCIONALIDADE |MOTIVOS               |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
-
+|José Geraldo  | Preciso que não tenha bugs           | Minha equipe não pode parar devido a bugs,tenho prazos para entrega.               |
+|Matheus Basilio    | Quero que a interface sejá prática                 | Não irei utilizar essas funcionalidades|
+|Larissa|Preciso que sejá rápido|Não tenho tempo a perder|
 ## Requisitos
 
 As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
