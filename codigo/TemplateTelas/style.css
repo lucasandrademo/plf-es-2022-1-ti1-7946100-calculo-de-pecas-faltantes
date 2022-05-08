@@ -1,0 +1,19 @@
+.bg-pink{
+    background-color: #CA59FF;
+}
+.text-color{
+    color: white !important;
+}
+#NOME{
+    width: 50%;
+}
+.justify-form{
+    justify-content: center;
+}
+label{
+    width: auto !important;
+}
+#DESCRICAO{
+    width: 50%;
+    
+}
