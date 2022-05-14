@@ -14,7 +14,7 @@ function cadastroProduto () {
     let tkt = document.getElementById("TKT").value;
 
     const produto = {
-        id: produtos.length + 1,
+        id: makeid(25),
         nome: nome,
         descricao: descricao,
         codigo: codigo,
@@ -45,6 +45,17 @@ function listarDadosNaTabelaDeProduto(){
         td_codigo.innerHTML = produtos[i].codigo;
         td_tkt.innerHTML = produtos[i].tkt;
     }
+}
+
+function makeid(length) {
+    let resultado = '';
+    let characteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let characteresTamanho = characteres.length;
+    for ( let i = 0; i < length; i++ ) {
+        resultado += characteres.charAt(Math.floor(Math.random() * 
+      characteresTamanho));
+   }
+   return resultado;
 }
 
 listarDadosNaTabelaDeProduto();
