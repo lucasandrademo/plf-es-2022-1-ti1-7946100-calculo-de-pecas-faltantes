@@ -22,7 +22,7 @@ function setProdutosSelect(){
     $('.produtos-select').html(html);
 }
 
-function getProdutoById(prodId){
+function produtoValidate(prodId){
     let filtrado = produtos.filter(function(obj) { return obj.id == prodId; });
     if(filtrado.length != 1){
         GrowlNotification.notify({
@@ -32,7 +32,7 @@ function getProdutoById(prodId){
             position: 'top-right',
             closeTimeout: 5000
         });
-        return null;
+        return false;
     }
     return filtrado[0];
 }
@@ -59,9 +59,9 @@ $('.compras-form').submit(function(event){
     let dataCompra = $(".date-input").val();
     let dataEntrega = $(".date-send-input").val();
 
-    const produto = getProdutoById(prodId);
+    const produtoValido = produtoValidate(prodId);
 
-    if(produto == null) return;
+    if(!produtoValido) return;
     
     dataCompra == '' ? dataCompra = moment() : dataCompra = moment(dataCompra, "YYYY-MM-DD");
 
