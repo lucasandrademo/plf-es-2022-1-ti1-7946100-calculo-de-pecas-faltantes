@@ -67,7 +67,7 @@ $('.compras-form').submit(function(event){
 
     if(dataEntrega == ''){
         dataEntrega = moment(dataCompra);
-        dataEntrega = dataEntrega.add(produto.tkt + margemPadrao, "d");
+        dataEntrega = dataEntrega.add(produtoValido.tkt + margemPadrao, "d");
     }else{
         dataEntrega = moment(dataEntrega, "YYYY-MM-DD")
     }
@@ -75,12 +75,12 @@ $('.compras-form').submit(function(event){
     const dtCompra = dataCompra.format("DD/MM/YYYY");
     const dtEntrega = dataEntrega.format("DD/MM/YYYY");
 
-    if(!dataValidate(dataCompra, dataEntrega, produto.tkt)) return;
+    if(!dataValidate(dataCompra, dataEntrega, produtoValido .tkt)) return;
 
     const row = {
         id: generate.id(25),
-        cod: produto.cod,
-        desc: produto.desc,
+        cod: produtoValido.cod,
+        desc: produtoValido.desc,
         qtde: qtd,
         dtCompra: dtCompra,
         dtEntrega: dtEntrega,

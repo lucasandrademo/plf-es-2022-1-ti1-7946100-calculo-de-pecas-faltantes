@@ -114,11 +114,11 @@
             >
                 <thead>
                     <tr>
-                        <th data-field="cod">Cod Produto</th>
-                        <th data-field="desc">Descrição</th>
-                        <th data-field="qtde">Qtde</th>
-                        <th data-field="dtCompra">Data da Compra</th>
-                        <th data-field="dtEntrega">Data Entrega Prometida</th>
+                        <th data-field="cod" data-sortable="true">Cod Produto</th>
+                        <th data-field="desc" data-sortable="true">Descrição</th>
+                        <th data-field="qtde" data-sortable="true">Qtde</th>
+                        <th data-field="dtCompra" data-sortable="true">Data da Compra</th>
+                        <th data-field="dtEntrega" data-sortable="true">Data Entrega Prometida</th>
                         <th data-field="actions" data-formatter="actions">Ações</th>
                     </tr>
                 </thead>
@@ -163,8 +163,7 @@
         return [
             excluir,
             editar
-        ].join('')
-        
+        ].join('');   
     }
 </script>
 
