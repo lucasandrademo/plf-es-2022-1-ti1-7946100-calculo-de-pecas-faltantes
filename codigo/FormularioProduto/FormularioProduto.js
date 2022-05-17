@@ -7,7 +7,7 @@ let produtos = JSON.parse(localStorage.getItem('produtos'));
 
 function cadastroProduto () {
 
-    
+    let jaExiste = false;
     let nome = document.getElementById("NOME").value;
     let descricao = document.getElementById("DESCRICAO").value;
     let codigo = document.getElementById("CODE").value;
@@ -21,11 +21,19 @@ function cadastroProduto () {
         tkt: tkt
     }
 
+    produtos.map((el) => {
+        if (el.nome === produto.nome) {
+            alert('Produto já cadastrado');
+            jaExiste = true
+        }})
+
+    if (jaExiste === false) {
         produtos.push(produto);
         localStorage.setItem('produtos', JSON.stringify(produtos));
         document.getElementById('FORMULARIO_PRODUTO').reset();
         listarDadosNaTabelaDeProduto()
         alert('Produto cadastrado com sucesso!');
+    }
 
 }
 
