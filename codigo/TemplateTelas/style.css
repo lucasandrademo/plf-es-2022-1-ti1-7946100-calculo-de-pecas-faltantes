@@ -39,3 +39,6 @@ h2{
     text-align: center;
     margin: 1.5rem 0px;
 }
+thead{
+    background-color: #CA59FF;
+}
