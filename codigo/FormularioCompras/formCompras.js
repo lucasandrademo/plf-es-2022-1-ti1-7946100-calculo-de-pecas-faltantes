@@ -129,11 +129,23 @@ function dataValidate(dataCompra, dataEntrega, tkt){
     return isValid;
 }
 
+function validaQtd(qtd){
+    if(qtd == null || qtd == '' || qtd <= 0){
+        $( ".compras-form" ).submit(function( event ) {
+            event.preventDefault();
+        })
+        return false;
+    }
+    return true;
+}
+
 function getDadosFormValidate(id = null){
     const prodId = $(".produtos-select").val();
     const qtd = $(".qtde-input").val();
     let dataCompra = $(".date-input").val();
     let dataEntrega = $(".date-send-input").val();
+
+    if(!validaQtd(qtd)) return false;
 
     const produtoValido = produtoValidate(prodId);
 
