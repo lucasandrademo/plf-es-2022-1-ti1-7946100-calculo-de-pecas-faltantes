@@ -2,18 +2,20 @@
 [
     {
         "id": "CwsLQLd7tbrQkmmYnlJEoJtkR",
+        "produto": "IYfFhyYpSUIWGVjAnPUyWevza",
         "cod": "CA2",
-        "desc": "bagulho muito doido",
+        "desc": "Cabine Trator",
         "qtde": 92,
-        "dtCompra": "14/05/2022",
-        "dtEntrega": "24/05/2022"
+        "dtCompra": "2022-05-14",
+        "dtEntrega": "2022-05-24"
     },
     {
         "id": "oEoSJ3Owmx3lmR98F39LAgvcp",
-        "cod": "CA2",
-        "desc": "bagulho muito doido",
+        "produto": "QZ8NPsoeLhmbRT2MmrA4LiAbq",
+        "cod": "C42",
+        "desc": "Sistema Embreagem",
         "qtde": 92,
-        "dtCompra": "14/04/2022",
-        "dtEntrega": "10/05/2022"
+        "dtCompra": "2022-04-19",
+        "dtEntrega": "2022-05-10"
     }
 ]
