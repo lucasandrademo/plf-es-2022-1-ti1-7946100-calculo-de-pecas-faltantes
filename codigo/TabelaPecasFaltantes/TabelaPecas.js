@@ -3,6 +3,7 @@ if (localStorage.getItem('pecasFaltantes') === null) {
 } 
 
 let pecasFaltantes = JSON.parse(localStorage.getItem('pecasFaltantes'));
+//aaa
 
 let casoTeste = [{
     idPeca: 1,
