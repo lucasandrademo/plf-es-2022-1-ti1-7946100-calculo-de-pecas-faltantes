@@ -86,7 +86,6 @@ const gera = {
             resultado += characteres.charAt(Math.floor(Math.random() * characteresTamanho));
         }
         let bd = local.get(dataBase)
-        console.log(bd)
         bd.forEach(data => {
             if(data.id == resultado){
                 return false
@@ -131,9 +130,13 @@ function dataValidate(dataCompra, dataEntrega, tkt){
 
 function validaQtd(qtd){
     if(qtd == null || qtd == '' || qtd <= 0){
-        $( ".compras-form" ).submit(function( event ) {
-            event.preventDefault();
-        })
+        GrowlNotification.notify({
+            title: 'ERRO DE CADASTRO!',
+            description: 'Necessário inserir uma quantidade',
+            type: 'error',
+            position: 'top-right',
+            closeTimeout: 5000
+        });
         return false;
     }
     return true;
