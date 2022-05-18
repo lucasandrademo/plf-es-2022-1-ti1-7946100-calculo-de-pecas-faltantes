@@ -1,0 +1,45 @@
+.bg-pink{
+    background-color: #CA59FF;
+}
+.text-color{
+    color: white !important;
+}
+
+#NOME{
+    width: 100%;
+}
+.justify-form{
+    justify-content: center;
+    margin: 1.75em;
+}
+label{
+    width: 100%;
+}
+#DESCRICAO{
+    width: 100%;
+    height: 7rem;
+}
+#CODE{
+    width: 100%;
+}
+#TKT{
+    width: 100%;
+}
+#button{
+    width: 20rem;
+    height: 3rem;
+    border: none;
+    background-color:#CA59FF ;
+    border-radius: 5px;
+}
+h1{
+    text-align: center;
+    margin: 3rem;
+}
+h2{
+    text-align: center;
+    margin: 1.5rem 0px;
+}
+thead{
+    background-color: #CA59FF;
+}
