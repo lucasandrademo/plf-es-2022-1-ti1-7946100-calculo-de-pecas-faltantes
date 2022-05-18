@@ -1,0 +1,217 @@
+header{
+
+    background-color: pink;
+    
+    width: 100%;
+    padding: 10px;
+}
+
+.containerHeader{
+
+display: flex;
+justify-content: space-between;
+}
+
+.imglogo{
+
+    max-width: 200px;
+}
+
+.logo{
+    
+    width: 200px;
+}
+
+.links{
+
+    
+    width: 600px;
+}
+
+.sectionsHeader{
+
+    color: white;
+
+    font-family: Impact, fantasy, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.links2{
+
+    margin-top: 5%;
+}
+
+.sectionsHeader:hover{
+
+    color: #793DDC;
+}
+
+body{
+
+    background-color: #E2BEE4;
+}
+
+
+.containerTitulo{
+
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+}
+
+.titulo1{
+
+    border-radius: 12px;
+
+    background-color: white;
+
+    width: 500px;
+    height: 75px;
+    padding-top: 22px;
+
+    color: black;
+    text-align: center;
+    font-family: Impact, fantasy, Arial, Helvetica, sans-serif;
+    font-size: 40px;
+
+
+}
+
+.containerEspecificacoes{
+
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.titulosEspecificacoes{
+
+    width: 250px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: white;
+
+    padding: 20px;
+    padding-top: 30px;
+  
+    text-align: center;
+
+    font-size: 30px;
+    color: black;
+    font-family: Impact, fantasy, Arial, Helvetica, sans-serif;
+
+}
+
+.containerQuantificacao{
+
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+
+.divQuantifica{
+
+    display: flex;
+}
+
+
+.paragrafoQuantifica{
+
+    width: 200px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: white;
+
+    padding: 20px;
+    padding-top: 30px;
+  
+    text-align: center;
+
+    font-size: 30px;
+    color: black;
+    font-family: Impact, fantasy, Arial, Helvetica, sans-serif;
+}
+
+
+.paragrafoContador{
+
+    width: 100px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: white;
+
+    padding: 20px;
+    padding-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+  
+    text-align: center;
+
+    font-size: 30px;
+    color: black;
+    font-family: Impact, fantasy, Arial, Helvetica, sans-serif;
+
+}
+
+
+
+
+
+.btns{
+    margin-top: 50px;
+
+    border-radius: 60px;
+
+    width: 40px;
+    height: 40px;
+
+    display: inline;
+
+    background-color: white;
+
+    font-family: Impact, fantasy, Arial, Helvetica, sans-serif;    
+    font-size: 23px;
+    
+}
+
+@media screen and (max-width: 820px ){
+
+    .titulosEspecificacoes{
+
+        
+        width: 200px;
+        height: 40px;
+
+        font-size: 26px;
+
+        margin-left: 5px;
+        margin-right: 5px;
+ 
+    }
+
+    .paragrafoQuantifica{
+
+        font-size: 24px;
+    
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    
+    .paragrafoContador{
+    
+        font-size: 24px;
+    }
+
+    .divQuantifica{
+
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+}
