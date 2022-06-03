@@ -1,6 +1,7 @@
-const btnIncrementa$ = document.getElementsByClassName("btnIncrementa");
-const btnDecrementa$ = document.getElementsByClassName("btnDecrementa");
-const p$ = document.getElementsByClassName("paragrafoContador");
+const btnIncrementa$ = document.getElementById("btnIncrementa");
+const btnDecrementa$ = document.getElementById("btnDecrementa");
+const container = document.querySelector(".container");
+const p$ = document.getElementById("pContador");
 
 let contador = 0;
 
@@ -60,49 +61,43 @@ let pecas = [{
 function listarDadosNaTabelaDePecas(){
 
     for(let i = 0; i < pecas.length; i++){
-        let nome = document.createElement("DIV")
-        let nomeP = document.createElement("H2")
-        let codigo = document.createElement("DIV")
-        let codigoP = document.createElement("h2")
-        let quantidade = document.createElement("DIV")
+        let divQuantificacao = document.createElement("DIV")
+        let nomeP = document.createElement("P")
+        let codigoP = document.createElement("P")
+        let divQuantifica = document.createElement("DIV")
         let quantidadeBttn1 = document.createElement("BUTTON")
-        let quantidadeDIV = document.createElement("DIV")
         let quantidadeP = document.createElement("P")
         let quantidadeBttn2 = document.createElement("BUTTON")
-
 
         let textoNome = document.createTextNode(`${pecas[i].nome}`);
         let textoCodigo = document.createTextNode(`${pecas[i].codigo}`);
         let textoQuantidade = document.createTextNode(`${pecas[i].quantidade}`);
         let incremento = document.createTextNode(`+`)
-        let decremento = document.createTextNode(`-`)       
-
-        nome.appendChild(nomeP)
-        nomeP.appendChild(textoNome)
-        codigo.appendChild(codigoP)
-        codigoP.appendChild(textoCodigo)
-
-
-        quantidade.appendChild(quantidadeBttn1)
-        quantidade.appendChild(quantidadeDIV)
-        quantidadeDIV.appendChild(quantidadeP)
-        quantidadeP.appendChild(textoQuantidade)
-        quantidade.appendChild(quantidadeBttn2)
-        quantidadeBttn1.appendChild(decremento)
-        quantidadeBttn2.appendChild(incremento)
-
-        nome.className = "paragrafoQuantifica";
-        codigo.className = "paragrafoQuantifica";
-        quantidadeDIV.className = "divQuantifica"
-        quantidadeBttn1.className = "btns"
-        quantidadeBttn2.className = "btns"
-
-
+        let decremento = document.createTextNode(`-`)
         
-        conteinerPecas.appendChild(nome)
-        conteinerPecas.appendChild(codigo)
-        conteinerPecas.appendChild(quantidade)
-    
+        divQuantificacao.appendChild(nomeP)
+        divQuantificacao.appendChild(codigoP)
+        divQuantificacao.appendChild(divQuantifica)
+
+        divQuantifica.appendChild(quantidadeBttn2)
+        divQuantifica.appendChild(quantidadeP)
+        divQuantifica.appendChild(quantidadeBttn1)
+
+        nomeP.appendChild(textoNome)
+        codigoP.appendChild(textoCodigo)
+        quantidadeBttn2.appendChild(decremento)
+        quantidadeBttn1.appendChild(incremento)
+        quantidadeP.appendChild(textoQuantidade)
+
+        divQuantifica.className = "divQuantifica"
+        divQuantificacao.className = "containerQuantificacao"
+        nomeP.className = "paragrafoQuantifica"
+        codigoP.className = "paragrafoQuantifica"
+        quantidadeBttn2.className = "btns"
+        quantidadeBttn1.className = "btns"
+        quantidadeP.className = "paragrafoContador"
+        
+        container.appendChild(divQuantificacao)
 
     }
 }

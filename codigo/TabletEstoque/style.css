@@ -1,3 +1,4 @@
+
 header{
 
     background-color: pink;
@@ -32,7 +33,7 @@ justify-content: space-between;
 
     color: white;
 
-    font-family: Impact, fantasy, Arial, Helvetica, sans-serif;
+    font-family:  Arial, Helvetica, sans-serif;
     text-decoration: none;
     font-size: 20px;
 
@@ -50,9 +51,11 @@ justify-content: space-between;
     color: #793DDC;
 }
 
+
 body{
 
     background-color: #E2BEE4;
+    margin: 0;
 }
 
 
@@ -75,7 +78,7 @@ body{
 
     color: black;
     text-align: center;
-    font-family: Impact, fantasy, Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
 
 
@@ -102,7 +105,7 @@ body{
 
     font-size: 30px;
     color: black;
-    font-family: Impact, fantasy, Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -134,7 +137,7 @@ body{
 
     font-size: 30px;
     color: black;
-    font-family: Impact, fantasy, Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -154,7 +157,7 @@ body{
 
     font-size: 30px;
     color: black;
-    font-family: Impact, fantasy, Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -174,7 +177,7 @@ body{
 
     background-color: white;
 
-    font-family: Impact, fantasy, Arial, Helvetica, sans-serif;    
+    font-family: Arial, Helvetica, sans-serif;    
     font-size: 23px;
     
 }
@@ -215,3 +218,6 @@ body{
     }
 
 }
+
+
+
