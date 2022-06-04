@@ -189,10 +189,8 @@ function setProdutosSelect(){
 
 function setComprasTable(){
     const compras = local.get('compras');
-    const produtos = local.get('produtos');
     compras.forEach(compra => {
         let produto = produtos.filter(function(obj) { return obj.id == compra.produto; });
-        console.log(produto)
         bts.addRow(
             table,
             {
