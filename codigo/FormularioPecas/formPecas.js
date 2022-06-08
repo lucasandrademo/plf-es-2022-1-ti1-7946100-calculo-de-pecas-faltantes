@@ -95,7 +95,7 @@ const gera = {
     }
 }
 
-const table = $('#comprasTable');
+const table = $('#pecasTable');
 
 var produtos = [
     {
@@ -135,39 +135,59 @@ var produtos = [
     }
 ]
 
-var compras = [
+var pecas = [
     {
-        "id": "CwsLQLd7tbrQkmmYnlJEoJtkR",
+        "id": 'IYfFhyYpSfER5VjAnPUyWevza',
         "produto": 'IYfFhyYpSUIWGVjAnPUyWevza',
-        "qtde": 92,
-        "dtCompra": "2022-05-14",
-        "dtEntrega": "2022-05-24"
+        "cod": 'DLJK4',
+        "name": 'Volante',
+        "desc": 'Guia para direção inclusa na cabine'
     },
     {
-        "id": "oEoSJ3Owmx3lmR98F39LAgvcp",
-        "produto": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
-        "qtde": 92,
-        "dtCompra": "2022-04-14",
-        "dtEntrega": "2022-05-10"
+        "id": 'IYfFhyYpSUIWGVjAfFhyYevza',
+        "produto": 'IYfFhyYpSUIWGVjAnPUyWevza',
+        "cod": 'DUJK4',
+        "name": 'Cabaça',
+        "desc": 'Parte superior inserida no topo da cabine'
+    },
+    {
+        "id": 'AXjAETSFuUK5p5VjAnPUyWevza',
+        "produto": 'AXjAETSFuUK5pVQUwJbR3iFSK',
+        "cod": 'PDJ44',
+        "name": 'Guia D',
+        "desc": 'Guia do lado direito do motorista para controle'
+    },
+    {
+        "id": 'IYfFhyYpAXjAETSFuUK5pevza',
+        "produto": 'AXjAETSFuUK5pVQUwJbR3iFSK',
+        "cod": 'PJJ43',
+        "name": 'Guia E',
+        "desc": 'Guia do lado esquerdo do motorista para controle'
     }
 ]
 
-var margemPadrao = 3
 var produtos;
 
 function setTemporario(){
     local.set('produtos', produtos);
-    local.set('compras', compras);
-    local.set('margemPadrao', margemPadrao);
+    local.set('pecas', pecas);
 }
 
 $(document).ready(() => {
     setTemporario(); //fake localstorage
     produtos = local.get('produtos');
     setProdutosSelect();
-    setComprasTable();
+    setPecasTable();
     $('.bootstrap-table').css('width', '90%')
 })
+
+function setProdutosSelect(){
+    const html = selectOptions(
+        produtos,
+        'Selecione um Produto'
+    );
+    $('.produtos-select').html(html);
+}
 
 function selectOptions(obj, msg = '', showCod = true){
     let html = '';
@@ -184,28 +204,20 @@ function selectOptions(obj, msg = '', showCod = true){
     return html;
 }
 
-function setProdutosSelect(){
-    const html = selectOptions(
-        produtos,
-        'Selecione um Produto'
-    );
-    $('.produtos-select').html(html);
-}
-
-function setComprasTable(){
-    const compras = local.get('compras');
-    compras.forEach(compra => {
-        let produto = produtos.filter(function(obj) { return obj.id == compra.produto; });
+function setPecasTable(){
+    const pecas = local.get('pecas');
+    pecas.forEach(peca => {
+        let produto = produtos.filter(function(obj) { return obj.id == peca.produto; });
         bts.addRow(
             table,
-            {
-                id: compra.id,
-                produto: compra.produto,
-                cod: produto[0].cod,
-                desc: produto[0].desc,
-                qtde: compra.qtde,
-                dtCompra: compra.dtCompra,
-                dtEntrega: compra.dtEntrega
+            { 
+                id: peca.id,
+                produto: peca.produto,
+                codprod: produto[0].cod,
+                nomeprod: produto[0].name,
+                codpeca: peca.cod,
+                nomepeca: peca.name,
+                descpeca: peca.desc
             }
         )
     });
@@ -227,66 +239,20 @@ function produtoValidate(prodId){
     return filtrado[0];
 }
 
-function dataValidate(dataCompra, dataEntrega, tkt){
-    let isValid = dataEntrega.isAfter(dataCompra.add(tkt, "d"));
-
-    if(!isValid){
-        GrowlNotification.notify({
-            title: 'ERRO DE CADASTRO!',
-            description: 'A fábrica não é capaz de entregar esse produto no tempo solicitado',
-            type: 'error',
-            position: 'top-right',
-            closeTimeout: 5000
-        });
-    }
-    return isValid;
-}
-
-function validaQtd(qtd){
-    if(qtd == null || qtd == '' || qtd <= 0){
-        GrowlNotification.notify({
-            title: 'ERRO DE CADASTRO!',
-            description: 'Necessário inserir uma quantidade',
-            type: 'error',
-            position: 'top-right',
-            closeTimeout: 5000
-        });
-        return false;
-    }
-    return true;
-}
-
 function getDadosFormValidate(id = null){
     const prodId = $(".produtos-select").val();
-    const qtd = $(".qtde-input").val();
-    let dataCompra = $(".date-input").val();
-    let dataEntrega = $(".date-send-input").val();
-
-    if(!validaQtd(qtd)) return false;
-
+    const codpeca = $(".cod").val();
+    const nomepeca = $(".nome").val();
+    const descpeca = $(".desc").val();
     const produtoValido = produtoValidate(prodId);
 
     if(produtoValido == false) return false;
-    
-    dataCompra == '' ? dataCompra = moment() : dataCompra = moment(dataCompra, "YYYY-MM-DD");
-
-    if(dataEntrega == ''){
-        dataEntrega = moment(dataCompra);
-        dataEntrega = dataEntrega.add(produtoValido.tkt + local.get('margemPadrao'), "d");
-    }else{
-        dataEntrega = moment(dataEntrega, "YYYY-MM-DD")
-    }
-
-    const dtCompra = dataCompra.format("YYYY-MM-DD");
-    const dtEntrega = dataEntrega.format("YYYY-MM-DD");
-
-    if(!dataValidate(dataCompra, dataEntrega, produtoValido.tkt)) return false;
 
     if(id==null){
-        id = gera.id('compras')
+        id = gera.id('pecas')
     
         while(id == false){
-            id = gera.id('compras')
+            id = gera.id('pecas')
         }
     }
 
@@ -295,35 +261,35 @@ function getDadosFormValidate(id = null){
             bts: {
                 id: id,
                 produto: prodId,
-                cod: produtoValido.cod,
-                desc: produtoValido.desc,
-                qtde: qtd,
-                dtCompra: dtCompra,
-                dtEntrega: dtEntrega,
+                codprod: produtoValido.cod,
+                nomeprod: produtoValido.name,
+                codpeca: codpeca,
+                nomepeca: nomepeca,
+                descpeca: descpeca,
             },
             local: {
                 id: id,
                 produto: prodId,
-                qtde: qtd,
-                dtCompra: dtCompra,
-                dtEntrega: dtEntrega,
+                cod: codpeca,
+                name: nomepeca,
+                desc: descpeca,
             }
         }
     ]
 }
 
 function excluir(id){
-    local.dell('compras', id)
+    local.dell('pecas', id)
     bts.dellRow(table, id)
 }
 
-function confirmaExclusao(id, cod, desc, dtEntrega){
+function confirmaExclusao(id, codpeca, nomepeca, codprod){
     GrowlNotification.closeAll();
     GrowlNotification.notify({
         title: 'CONFIRMAÇÃO DE EXCLUSAO!',
         type: 'warning',
         position: 'top-right',
-        description: `deseja realmente excluir o dado  ${cod} - ${desc}, com data de entrega para dia ${dtEntrega}?`,
+        description: `deseja realmente excluir a peca ${codpeca} - ${nomepeca}, vinculado ao produto ${codprod}?`,
         image: {
             visible: true,
             customImage: '../assets/growl-notification/img/warning.png'
@@ -350,12 +316,12 @@ function limpaEdicao(index){
     $(".excluir").removeAttr("disabled");
     $(".editar").removeAttr("disabled");
     $(".produtos-select").val('');
-    $(".qtde-input").val('');
-    $(".date-input").val('');
-    $(".date-send-input").val('');
+    $(".nome").val('');
+    $(".desc").val('');
+    $(".cod").val('');
 }
 
-function salvaEdicao(id, index){
+function salvaEdicao(id, index, codpeca){
     const validData = getDadosFormValidate(id)
 
     if(validData == false){
@@ -371,16 +337,23 @@ function salvaEdicao(id, index){
         data.bts
     )
     local.update(
-        'compras',
+        'pecas',
         id,
         data.local
     )
     limpaEdicao(index);
+
+    GrowlNotification.notify({
+        title: `PEÇA ${codpeca} ATUALIZADA!`,
+        type: 'success',
+        position: 'top-right',
+        closeTimeout: 5000
+    });
 }
 
-function editar(id, produto, qtde, dtCompra, dtEntrega, index){
+function editar(id, index, produto, nomepeca, descpeca, codpeca){
 
-    html =`<button onclick="salvaEdicao('${id}','${index}')" id="saveBtn" class="buttons">Salvar</button>
+    html =`<button onclick="salvaEdicao('${id}','${index}','${codpeca}')" id="saveBtn" class="buttons">Salvar</button>
     <button onclick="limpaEdicao('${index}')" id="cancelBtn" class="buttons">Cancelar</button>`
 
     $("tr[data-index='"+index+"']").addClass('selected');
@@ -390,19 +363,18 @@ function editar(id, produto, qtde, dtCompra, dtEntrega, index){
     $(".excluir").attr("disabled","disabled");
     $(".editar").attr("disabled","disabled");
     $(".produtos-select").val(produto);
-    $(".qtde-input").val(qtde);
-    $(".date-input").val(dtCompra);
-    $(".date-send-input").val(dtEntrega);
-    $(".produtos-select").attr("disabled","disabled");
+    $(".nome").val(nomepeca);
+    $(".desc").val(descpeca);
+    $(".cod").val(codpeca);
 }
 
-function confirmaEdicao(id, produto, cod, desc, qtde, dtCompra, dtEntrega, index){
+function confirmaEdicao(id, codpeca, nomepeca, codprod, index, produto, descpeca){
     GrowlNotification.closeAll();
     GrowlNotification.notify({
         title: 'Deseja Editar?',
         type: 'info',
         position: 'top-right',
-        description: `deseja realmente editar o dado  ${cod} - ${desc}, com data de entrega para dia ${dtEntrega}?`,
+        description: `deseja realmente editar a peca ${codpeca} - ${nomepeca}, vinculado ao produto ${codprod}?`,
         image: {
             visible: true,
             customImage: '../assets/growl-notification/img/default.png'
@@ -411,7 +383,7 @@ function confirmaEdicao(id, produto, cod, desc, qtde, dtCompra, dtEntrega, index
         buttons: {
             action: {
                 text: 'Sim',
-                callback: () => editar(id, produto, qtde, dtCompra, dtEntrega, index)
+                callback: () => editar(id, index, produto, nomepeca, descpeca, codpeca)
             },
             cancel: {
                 text: 'Cancelar',                
@@ -424,11 +396,11 @@ function confirmaEdicao(id, produto, cod, desc, qtde, dtCompra, dtEntrega, index
 function actions(value, row, index) {
     let excluir, editar = '';
     excluir =
-    `<button onclick="confirmaExclusao('${row.id}','${row.cod}','${row.desc}','${row.dtEntrega}')" class="excluir btn btn-danger" title="Excluir registro">
+    `<button onclick="confirmaExclusao('${row.id}','${row.codpeca}','${row.nomepeca}','${row.codprod}')" class="excluir btn btn-danger" title="Excluir registro">
         <i class="fa fa-trash" aria-hidden="true"></i>
     </button>`;
     editar =
-    `<button onclick="confirmaEdicao('${row.id}', '${row.produto}','${row.cod}','${row.desc}','${row.qtde}','${row.dtCompra}', '${row.dtEntrega}','${index}')" class="editar btn btn-primary" title="Editar registro">
+    `<button onclick="confirmaEdicao('${row.id}','${row.codpeca}','${row.nomepeca}','${row.codprod}', '${index}','${row.produto}','${row.descpeca}')" class="editar btn btn-primary" title="Editar registro">
         <i class="fa fa-pencil" aria-hidden="true"></i>
     </button>`;
     return [
@@ -452,7 +424,7 @@ $('#submitBtn').click( (event) => {
         data.bts
     )
     local.add(
-        'compras',
+        'pecas',
         data.local
     )
 
