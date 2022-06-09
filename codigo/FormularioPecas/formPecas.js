@@ -141,40 +141,101 @@ var pecas = [
         "produto": 'IYfFhyYpSUIWGVjAnPUyWevza',
         "cod": 'DLJK4',
         "name": 'Volante',
-        "desc": 'Guia para direção inclusa na cabine'
+        "desc": 'Guia para direção inclusa na cabine',
+        "qtde": 2,
+        "qtd_estoque": 0
     },
     {
         "id": 'IYfFhyYpSUIWGVjAfFhyYevza',
         "produto": 'IYfFhyYpSUIWGVjAnPUyWevza',
         "cod": 'DUJK4',
         "name": 'Cabaça',
-        "desc": 'Parte superior inserida no topo da cabine'
+        "desc": 'Parte superior inserida no topo da cabine',
+        "qtde": 2,
+        "qtd_estoque": 30
     },
     {
         "id": 'AXjAETSFuUK5p5VjAnPUyWevza',
         "produto": 'AXjAETSFuUK5pVQUwJbR3iFSK',
         "cod": 'PDJ44',
         "name": 'Guia D',
-        "desc": 'Guia do lado direito do motorista para controle'
+        "desc": 'Guia do lado direito do motorista para controle',
+        "qtde": 2,
+        "qtd_estoque": 98
     },
     {
         "id": 'IYfFhyYpAXjAETSFuUK5pevza',
         "produto": 'AXjAETSFuUK5pVQUwJbR3iFSK',
         "cod": 'PJJ43',
         "name": 'Guia E',
-        "desc": 'Guia do lado esquerdo do motorista para controle'
+        "desc": 'Guia do lado esquerdo do motorista para controle',
+        "qtde": 3,
+        "qtd_estoque": 2
+    },
+    {
+        "id": 'IY43hyYpAXjAETSFuUK5pevza',
+        "produto": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
+        "cod": 'PJJ23',
+        "name": 'Pedal',
+        "desc": 'Responsabilidade de controle',
+        "qtde": 2,
+        "qtd_estoque": 1
+    },
+    {
+        "id": 'IYfFhyYpAXjA0oSFuUK5pevza',
+        "produto": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
+        "cod": 'PKD43',
+        "name": 'Guia',
+        "desc": 'Manual de guia',
+        "qtde": 1,
+        "qtd_estoque": 2
+    },
+    {
+        "id": 'IYfFhyYpAXjAEdpSFuUK5pevza',
+        "produto": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
+        "cod": 'SLJ43',
+        "name": 'tela E',
+        "desc": 'Relacao Geral',
+        "qtde": 2,
+        "qtd_estoque": 1
     }
 ]
 
+var compras = [
+    {
+        "id": "CwsLQLd7tbrQkmmYnlJEoJtkR",
+        "produto": 'IYfFhyYpSUIWGVjAnPUyWevza',
+        "qtde": 92,
+        "dtCompra": "2022-05-14",
+        "dtEntrega": "2022-05-24"
+    },
+    {
+        "id": "oEoSJ3Owmx3lmR98F39LAgvcp",
+        "produto": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
+        "qtde": 92,
+        "dtCompra": "2022-04-14",
+        "dtEntrega": "2022-05-10"
+    }
+]
+
+var margemPadrao = 3
+
 var produtos;
+
+// function calcularFaltantes() {
+//     const comprados = local.get('compras');
+// }
 
 function setTemporario(){
     local.set('produtos', produtos);
     local.set('pecas', pecas);
+    local.set('compras', compras);
+    local.set('margemPadrao', margemPadrao);
 }
 
 $(document).ready(() => {
     setTemporario(); //fake localstorage
+    // calcularFaltantes();
     produtos = local.get('produtos');
     setProdutosSelect();
     setPecasTable();
@@ -217,16 +278,38 @@ function setPecasTable(){
                 nomeprod: produto[0].name,
                 codpeca: peca.cod,
                 nomepeca: peca.name,
-                descpeca: peca.desc
+                descpeca: peca.desc,
+                qtde: peca.qtde
             }
         )
     });
+}
+
+function codValidate(codpeca){
+    let dadoValido = true
+    pecas = local.get('pecas')
+    pecas.forEach(peca => {
+        if(peca.cod == codpeca){
+            dadoValido = false;
+            GrowlNotification.closeAll();
+            GrowlNotification.notify({
+                title: 'ERRO DE CADASTRO!',
+                description: 'Código da peça já cadastrado',
+                type: 'error',
+                position: 'top-right',
+                closeTimeout: 5000
+            });
+        }
+    });
+    return dadoValido;
 }
 
 function produtoValidate(prodId){
     let produtos = local.get('produtos');
     let filtrado = produtos.filter(function(obj) { return obj.id == prodId; });
     if(filtrado.length != 1){
+        filtrado[0] = false;
+        GrowlNotification.closeAll();
         GrowlNotification.notify({
             title: 'ERRO DE CADASTRO!',
             description: 'Cadastro de Produto defeituoso, favor, entrar em contato com o responsável',
@@ -234,26 +317,83 @@ function produtoValidate(prodId){
             position: 'top-right',
             closeTimeout: 5000
         });
-        return false;
     }
     return filtrado[0];
 }
 
-function getDadosFormValidate(id = null){
+function qtdeValidate(quantidade){
+    let dadoValido = true
+    if(quantidade == '' || quantidade <= 0 || quantidade != Math.trunc(quantidade)){
+        GrowlNotification.closeAll();
+        GrowlNotification.notify({
+            title: 'ERRO DE CADASTRO!',
+            description: 'Quantidade deve ser um número inteiro e positivo',
+            type: 'error',
+            position: 'top-right',
+            closeTimeout: 5000
+        });
+        dadoValido = false
+    }
+    return dadoValido;
+}
+
+function requiredValidate(nomepeca, codpeca){
+    let dadoValido = true
+    if(
+        nomepeca == '' ||
+        codpeca == ''
+    ){
+        GrowlNotification.closeAll();
+        GrowlNotification.notify({
+            title: 'ERRO DE CADASTRO!',
+            description: 'Dados obrigatórios não preenchidos',
+            type: 'error',
+            position: 'top-right',
+            closeTimeout: 5000
+        });
+        obrigatorios = false
+    }
+    return dadoValido;
+}
+
+function getEstoque(id){
+    let estoque = 0;
+    pecas.forEach(peca => {
+        if(peca.id = id){
+            estoque = peca.qtd_estoque
+        }
+    });
+    return estoque
+}
+
+function getDadosPecasValidate(id = null){
     const prodId = $(".produtos-select").val();
     const codpeca = $(".cod").val();
     const nomepeca = $(".nome").val();
     const descpeca = $(".desc").val();
+    const quantidade = $(".qtde").val();
+    const qtdeValido = qtdeValidate(quantidade);
     const produtoValido = produtoValidate(prodId);
-
-    if(produtoValido == false) return false;
+    let codValido = true;
+    const qtdeEstoque = getEstoque(id);
+    const obrigatoriosValido = requiredValidate(nomepeca, codpeca);
 
     if(id==null){
+        codValido = codValidate(codpeca);
         id = gera.id('pecas')
     
         while(id == false){
             id = gera.id('pecas')
         }
+    }
+
+    if(
+        produtoValido == false ||
+        codValido == false ||
+        obrigatoriosValido == false ||
+        qtdeValido == false
+    ){
+        return false;
     }
 
     return [
@@ -266,6 +406,7 @@ function getDadosFormValidate(id = null){
                 codpeca: codpeca,
                 nomepeca: nomepeca,
                 descpeca: descpeca,
+                qtde: quantidade
             },
             local: {
                 id: id,
@@ -273,6 +414,8 @@ function getDadosFormValidate(id = null){
                 cod: codpeca,
                 name: nomepeca,
                 desc: descpeca,
+                qtde: quantidade,
+                qtd_estoque: qtdeEstoque
             }
         }
     ]
@@ -319,39 +462,39 @@ function limpaEdicao(index){
     $(".nome").val('');
     $(".desc").val('');
     $(".cod").val('');
+    $(".qtde").val('');
 }
 
 function salvaEdicao(id, index, codpeca){
-    const validData = getDadosFormValidate(id)
+    const validData = getDadosPecasValidate(id)
 
-    if(validData == false){
-        return
+    if(validData != false){
+        const data = validData[0];
+
+        bts.update(
+            table,
+            id,
+            index,
+            data.bts
+        )
+        local.update(
+            'pecas',
+            id,
+            data.local
+        )
+        limpaEdicao(index);
+        pecas = local.get('pecas')
+    
+        GrowlNotification.notify({
+            title: `PEÇA ${codpeca} ATUALIZADA!`,
+            type: 'success',
+            position: 'top-right',
+            closeTimeout: 5000
+        });
     }
-
-    const data = validData[0];
-
-    bts.update(
-        table,
-        id,
-        index,
-        data.bts
-    )
-    local.update(
-        'pecas',
-        id,
-        data.local
-    )
-    limpaEdicao(index);
-
-    GrowlNotification.notify({
-        title: `PEÇA ${codpeca} ATUALIZADA!`,
-        type: 'success',
-        position: 'top-right',
-        closeTimeout: 5000
-    });
 }
 
-function editar(id, index, produto, nomepeca, descpeca, codpeca){
+function editar(id, index, produto, nomepeca, descpeca, codpeca, qtde){
 
     html =`<button onclick="salvaEdicao('${id}','${index}','${codpeca}')" id="saveBtn" class="buttons">Salvar</button>
     <button onclick="limpaEdicao('${index}')" id="cancelBtn" class="buttons">Cancelar</button>`
@@ -366,9 +509,10 @@ function editar(id, index, produto, nomepeca, descpeca, codpeca){
     $(".nome").val(nomepeca);
     $(".desc").val(descpeca);
     $(".cod").val(codpeca);
+    $(".qtde").val(qtde);
 }
 
-function confirmaEdicao(id, codpeca, nomepeca, codprod, index, produto, descpeca){
+function confirmaEdicao(id, codpeca, nomepeca, codprod, index, produto, descpeca, qtde){
     GrowlNotification.closeAll();
     GrowlNotification.notify({
         title: 'Deseja Editar?',
@@ -383,7 +527,7 @@ function confirmaEdicao(id, codpeca, nomepeca, codprod, index, produto, descpeca
         buttons: {
             action: {
                 text: 'Sim',
-                callback: () => editar(id, index, produto, nomepeca, descpeca, codpeca)
+                callback: () => editar(id, index, produto, nomepeca, descpeca, codpeca, qtde)
             },
             cancel: {
                 text: 'Cancelar',                
@@ -400,7 +544,7 @@ function actions(value, row, index) {
         <i class="fa fa-trash" aria-hidden="true"></i>
     </button>`;
     editar =
-    `<button onclick="confirmaEdicao('${row.id}','${row.codpeca}','${row.nomepeca}','${row.codprod}', '${index}','${row.produto}','${row.descpeca}')" class="editar btn btn-primary" title="Editar registro">
+    `<button onclick="confirmaEdicao('${row.id}','${row.codpeca}','${row.nomepeca}','${row.codprod}', '${index}','${row.produto}','${row.descpeca}','${row.qtde}')" class="editar btn btn-primary" title="Editar registro">
         <i class="fa fa-pencil" aria-hidden="true"></i>
     </button>`;
     return [
@@ -411,27 +555,26 @@ function actions(value, row, index) {
 
 $('#submitBtn').click( (event) => {
     event.preventDefault();
-    const validData = getDadosFormValidate()
+    const validData = getDadosPecasValidate()
 
-    if(validData == false){
-        return
+    if(validData != false){
+        const data = validData[0]
+
+        bts.addRow(
+            table,
+            data.bts
+        )
+        local.add(
+            'pecas',
+            data.local
+        )
+        pecas = local.get('pecas')
+    
+        GrowlNotification.notify({
+            title: 'CADASTRO REALIZADO!',
+            type: 'success',
+            position: 'top-right',
+            closeTimeout: 5000
+        });
     }
-
-    const data = validData[0]
-
-    bts.addRow(
-        table,
-        data.bts
-    )
-    local.add(
-        'pecas',
-        data.local
-    )
-
-    GrowlNotification.notify({
-        title: 'CADASTRO REALIZADO!',
-        type: 'success',
-        position: 'top-right',
-        closeTimeout: 5000
-    });
 })

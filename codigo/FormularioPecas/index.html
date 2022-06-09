@@ -90,7 +90,15 @@
                             <input type="text" class="cod form-control" minlength="5" maxlength="5">
                         </div>
                     </div>
-                </div>     
+                </div>
+                <div class="row justify-form">
+                    <div style="width: 50% !important;">
+                        <div class="col-12">
+                            <label> Quantidade Necessária para Construção </label>
+                            <input required type="number" class="qtde form-control" min="1">
+                        </div>
+                    </div>
+                </div>
                 <div id="submitBtn" class="row justify-form" >
                     <button type="submit" class="buttons">Cadastrar Compra</button>
                 </div>
@@ -120,6 +128,7 @@
                         <th data-field="codpeca" data-sortable="true">Cod Peça</th>
                         <th data-field="nomepeca" data-sortable="true">Nome Peça</th>
                         <th data-field="descpeca" data-sortable="true">Descrição Peça</th>
+                        <th data-field="qtde" data-sortable="true">Quantidade</th>
                         <th data-field="actions" data-formatter="actions">Ações</th>
                     </tr>
                 </thead>
@@ -130,6 +139,7 @@
                         <th>Cod Peça</th>
                         <th>Nome Peça</th>
                         <th>Descrição Peça</th>
+                        <th>Quantidade</th>
                         <th>Ações</th>
                     </tr>
                 </tfoot>
