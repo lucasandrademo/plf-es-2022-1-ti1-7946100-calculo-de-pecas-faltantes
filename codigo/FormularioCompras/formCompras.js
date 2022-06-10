@@ -122,8 +122,18 @@ function selectOptions(obj, msg = '', showCod = true){
 }
 
 function setProdutosSelect(){
+    let pecas = local.get('pecas');
+    let produtosSelect = []
+    produtos.forEach(produto => {
+        pecas.forEach(peca => {
+            let select = produtosSelect.filter(function(obj) { return obj.id == peca.produto});
+            if(produto.id == peca.produto && select.length === 0){
+                produtosSelect.push(produto)
+            }
+        });
+    });
     const html = selectOptions(
-        produtos,
+        produtosSelect,
         'Selecione um Produto'
     );
     $('.produtos-select').html(html);

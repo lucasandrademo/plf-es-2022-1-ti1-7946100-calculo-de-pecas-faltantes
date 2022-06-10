@@ -98,9 +98,11 @@ const gera = {
 const table = $('#pecasTable');
 
 var produtos;
+var pecas;
 
 $(document).ready(() => {
     produtos = local.get('produtos');
+    pecas = local.get('pecas');
     setProdutosSelect();
     setPecasTable();
     $('.bootstrap-table').css('width', '90%')
