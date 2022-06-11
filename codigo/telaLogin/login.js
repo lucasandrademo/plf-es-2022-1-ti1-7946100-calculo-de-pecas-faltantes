@@ -30,7 +30,7 @@ btn$.addEventListener("click", function(){
 
     if(credenciais[0].nome == user$ && credenciais[0].senha == pass$){
 
-        window.location.href = "http://www.devmedia.com.br";
+        window.location.href = "exemplo.html";
     }
     else if(credenciais[1].nome == user$ && credenciais[1].senha == pass$){
 
