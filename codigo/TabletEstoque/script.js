@@ -3,31 +3,7 @@ const btnDecrementa$ = document.getElementById("btnDecrementa");
 const container = document.querySelector(".container");
 const p$ = document.getElementById("pContador");
 
-let contador = 0;
 
-
-p$.innerHTML = contador;
-
-btnIncrementa$.addEventListener("click", function(){
-
-p$.innerHTML = ++contador
-
-});
-
-btnDecrementa$.addEventListener("click", function(){
-
-    --contador
-
-    if(contador < 0) {
-
-        contador = 0
-
-
-    }
-
-    p$.innerHTML = contador
-
-});
 
 
 if (localStorage.getItem('produtos') === null) {
@@ -50,9 +26,10 @@ let pecas = [{
 
     codigo: "71449832219",
 
-    quantidade: 2,
+    quantidade: 0,
     
-}
+},
+
 
 ]
 
@@ -68,6 +45,11 @@ function listarDadosNaTabelaDePecas(){
         let quantidadeBttn1 = document.createElement("BUTTON")
         let quantidadeP = document.createElement("P")
         let quantidadeBttn2 = document.createElement("BUTTON")
+
+        quantidadeBttn1.setAttribute("ID", `incrementa_${pecas[i].codigo}`)
+        quantidadeBttn2.setAttribute("ID", `decrementa_${pecas[i].codigo}`)
+        quantidadeP.setAttribute("ID", `pContador_${pecas[i].codigo}`)
+        
 
         let textoNome = document.createTextNode(`${pecas[i].nome}`);
         let textoCodigo = document.createTextNode(`${pecas[i].codigo}`);
@@ -99,10 +81,38 @@ function listarDadosNaTabelaDePecas(){
         
         container.appendChild(divQuantificacao)
 
+        quantidadeBttn1.addEventListener("click", function(){
+            
+            pecas[i].quantidade++
+            quantidadeP.innerHTML = pecas[i].quantidade
+        
+            
+            });   
+            
+        quantidadeBttn2.addEventListener("click", function(){
+
+            pecas[i].quantidade--
+            
+            if(pecas[i].quantidade < 0) {
+            
+                pecas[i].quantidade = 0
+            
+            
+            }
+            
+            quantidadeP.innerHTML = pecas[i].quantidade
+            
+        });
+
+
+
     }
 }
 
 listarDadosNaTabelaDePecas();
 
+
+
+    
 
 

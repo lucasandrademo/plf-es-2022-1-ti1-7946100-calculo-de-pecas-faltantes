@@ -16,17 +16,20 @@ justify-content: space-between;
 .imglogo{
 
     max-width: 200px;
+
 }
 
 .logo{
     
     width: 200px;
+
+    margin-left: 20px;
 }
 
 .links{
 
-    
-    width: 600px;
+    margin-right: 20px;
+    width: 750px;
 }
 
 .sectionsHeader{
@@ -37,8 +40,8 @@ justify-content: space-between;
     text-decoration: none;
     font-size: 20px;
 
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 18px;
+
 }
 
 .links2{
