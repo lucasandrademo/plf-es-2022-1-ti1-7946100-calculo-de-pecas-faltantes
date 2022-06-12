@@ -32,10 +32,18 @@ label{
     border-radius: 5px;
 }
 h1{
+    background-color: #CA59FF;
     text-align: center;
     margin: 3rem;
 }
 h2{
     text-align: center;
     margin: 1.5rem 0px;
+}
+table{
+    position: absolute;
+    width: 800px;
+    height: 600px;
+    left: 200px;
+    top: 200px;
 }
