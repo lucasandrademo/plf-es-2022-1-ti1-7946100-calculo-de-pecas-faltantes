@@ -1,34 +1,34 @@
 const local = {
-    set: (name, obj) => localStorage.setItem(name, JSON.stringify(obj)),
+    set: (nome, obj) => localStorage.setItem(nome, JSON.stringify(obj)),
     clr: () => localStorage.clear(),
-    get: (name) => JSON.parse(localStorage.getItem(name)),
-    rmv: (name) => localStorage.removeItem(name),
-    add: (nameObjc, objAdd) => {
-        const newObjc = JSON.parse(localStorage.getItem(nameObjc));
-        localStorage.removeItem(nameObjc);
+    get: (nome) => JSON.parse(localStorage.getItem(nome)),
+    rmv: (nome) => localStorage.removeItem(nome),
+    add: (nomeObjc, objAdd) => {
+        const newObjc = JSON.parse(localStorage.getItem(nomeObjc));
+        localStorage.removeItem(nomeObjc);
         newObjc.push(objAdd)
-        localStorage.setItem(nameObjc, JSON.stringify(newObjc));
+        localStorage.setItem(nomeObjc, JSON.stringify(newObjc));
     },
-    dell: (nameObjc, objDellId) => {
+    dell: (nomeObjc, objDellId) => {
         let newObjc = [];
-        JSON.parse(localStorage.getItem(nameObjc)).forEach(objc => {
+        JSON.parse(localStorage.getItem(nomeObjc)).forEach(objc => {
             if(objc.id != objDellId){
                 newObjc.push(objc)
             }
         });
-        localStorage.removeItem(nameObjc);
-        localStorage.setItem(nameObjc, JSON.stringify(newObjc));
+        localStorage.removeItem(nomeObjc);
+        localStorage.setItem(nomeObjc, JSON.stringify(newObjc));
     },
-    update: (nameObjc, ObjId, newObj) => {
+    update: (nomeObjc, ObjId, newObj) => {
         let newObjc = [];
-        JSON.parse(localStorage.getItem(nameObjc)).forEach(objc => {
+        JSON.parse(localStorage.getItem(nomeObjc)).forEach(objc => {
             if(objc.id != ObjId){
                 newObjc.push(objc)
             }
         });
-        localStorage.removeItem(nameObjc);
+        localStorage.removeItem(nomeObjc);
         newObjc.push(newObj)
-        localStorage.setItem(nameObjc, JSON.stringify(newObjc));
+        localStorage.setItem(nomeObjc, JSON.stringify(newObjc));
     }
 }
 
@@ -116,7 +116,7 @@ function setProdutosSelect(){
     $('.produtos-select').html(html);
 }
 
-function selectOptions(obj, msg = '', showCod = true){
+function selectOptions(obj, msg = '', showcodigo = true){
     let html = '';
     if(msg != ''){
         html += `<option value="" disabled selected hidden>${msg}</option>`;
@@ -124,8 +124,8 @@ function selectOptions(obj, msg = '', showCod = true){
     obj.forEach(item => {
         html +=
         `<option value="${item.id}">
-            ${showCod && item.cod + ' - '}
-            ${item.desc}
+            ${showcodigo && item.codigo + ' - '}
+            ${item.descricao}
         </option>`;
     });
     return html;
@@ -140,27 +140,27 @@ function setPecasTable(){
             { 
                 id: peca.id,
                 produto: peca.produto,
-                codprod: produto[0].cod,
-                nomeprod: produto[0].name,
-                codpeca: peca.cod,
-                nomepeca: peca.name,
-                descpeca: peca.desc,
+                codigoprod: produto[0].codigo,
+                nomeprod: produto[0].nome,
+                codigo: peca.codigo,
+                nome: peca.nome,
+                descricao: peca.descricao,
                 qtde: peca.qtde
             }
         )
     });
 }
 
-function codValidate(codpeca){
+function codigoValidate(codigo){
     let dadoValido = true
     pecas = local.get('pecas')
     pecas.forEach(peca => {
-        if(peca.cod == codpeca){
+        if(peca.codigo == codigo){
             dadoValido = false;
             GrowlNotification.closeAll();
             GrowlNotification.notify({
                 title: 'ERRO DE CADASTRO!',
-                description: 'Código da peça já cadastrado',
+                descricaoription: 'Código da peça já cadastrado',
                 type: 'error',
                 position: 'top-right',
                 closeTimeout: 5000
@@ -178,7 +178,7 @@ function produtoValidate(prodId){
         GrowlNotification.closeAll();
         GrowlNotification.notify({
             title: 'ERRO DE CADASTRO!',
-            description: 'Cadastro de Produto defeituoso, favor, entrar em contato com o responsável',
+            descricaoription: 'Cadastro de Produto defeituoso, favor, entrar em contato com o responsável',
             type: 'error',
             position: 'top-right',
             closeTimeout: 5000
@@ -193,7 +193,7 @@ function qtdeValidate(quantidade){
         GrowlNotification.closeAll();
         GrowlNotification.notify({
             title: 'ERRO DE CADASTRO!',
-            description: 'Quantidade deve ser um número inteiro e positivo',
+            descricaoription: 'Quantidade deve ser um número inteiro e positivo',
             type: 'error',
             position: 'top-right',
             closeTimeout: 5000
@@ -203,16 +203,16 @@ function qtdeValidate(quantidade){
     return dadoValido;
 }
 
-function requiredValidate(nomepeca, codpeca){
+function requiredValidate(nome, codigo){
     let dadoValido = true
     if(
-        nomepeca == '' ||
-        codpeca == ''
+        nome == '' ||
+        codigo == ''
     ){
         GrowlNotification.closeAll();
         GrowlNotification.notify({
             title: 'ERRO DE CADASTRO!',
-            description: 'Dados obrigatórios não preenchidos',
+            descricaoription: 'Dados obrigatórios não preenchidos',
             type: 'error',
             position: 'top-right',
             closeTimeout: 5000
@@ -234,18 +234,17 @@ function getEstoque(id){
 
 function getDadosPecasValidate(id = null){
     const prodId = $(".produtos-select").val();
-    const codpeca = $(".cod").val();
-    const nomepeca = $(".nome").val();
-    const descpeca = $(".desc").val();
+    const codigo = $(".codigo").val();
+    const nome = $(".nome").val();
+    const descricao = $(".descricao").val();
     const quantidade = $(".qtde").val();
     const qtdeValido = qtdeValidate(quantidade);
     const produtoValido = produtoValidate(prodId);
-    let codValido = true;
+    let codigoValido = true;
     const qtdeEstoque = getEstoque(id);
-    const obrigatoriosValido = requiredValidate(nomepeca, codpeca);
-
+    const obrigatoriosValido = requiredValidate(nome, codigo);
     if(id==null){
-        codValido = codValidate(codpeca);
+        codigoValido = codigoValidate(codigo);
         id = gera.id('pecas')
     
         while(id == false){
@@ -255,7 +254,7 @@ function getDadosPecasValidate(id = null){
 
     if(
         produtoValido == false ||
-        codValido == false ||
+        codigoValido == false ||
         obrigatoriosValido == false ||
         qtdeValido == false
     ){
@@ -267,24 +266,25 @@ function getDadosPecasValidate(id = null){
             bts: {
                 id: id,
                 produto: prodId,
-                codprod: produtoValido.cod,
-                nomeprod: produtoValido.name,
-                codpeca: codpeca,
-                nomepeca: nomepeca,
-                descpeca: descpeca,
+                codigoprod: produtoValido.codigo,
+                nomeprod: produtoValido.nome,
+                codigo: codigo,
+                nome: nome,
+                descricao: descricao,
                 qtde: quantidade
             },
             local: {
                 id: id,
                 produto: prodId,
-                cod: codpeca,
-                name: nomepeca,
-                desc: descpeca,
+                codigo: codigo,
+                nome: nome,
+                descricao: descricao,
                 qtde: quantidade,
                 qtd_estoque: qtdeEstoque
             }
         }
     ]
+
 }
 
 function excluir(id){
@@ -292,13 +292,13 @@ function excluir(id){
     bts.dellRow(table, id)
 }
 
-function confirmaExclusao(id, codpeca, nomepeca, codprod){
+function confirmaExclusao(id, codigo, nome, codigoprod){
     GrowlNotification.closeAll();
     GrowlNotification.notify({
         title: 'CONFIRMAÇÃO DE EXCLUSAO!',
         type: 'warning',
         position: 'top-right',
-        description: `deseja realmente excluir a peca ${codpeca} - ${nomepeca}, vinculado ao produto ${codprod}?`,
+        descricaoription: `deseja realmente excluir a peca ${codigo} - ${nome}, vinculado ao produto ${codigoprod}?`,
         image: {
             visible: true,
             customImage: '../assets/growl-notification/img/warning.png'
@@ -326,12 +326,12 @@ function limpaEdicao(index){
     $(".editar").removeAttr("disabled");
     $(".produtos-select").val('');
     $(".nome").val('');
-    $(".desc").val('');
-    $(".cod").val('');
+    $(".descricao").val('');
+    $(".codigo").val('');
     $(".qtde").val('');
 }
 
-function salvaEdicao(id, index, codpeca){
+function salvaEdicao(id, index, codigo){
     const validData = getDadosPecasValidate(id)
 
     if(validData != false){
@@ -352,7 +352,7 @@ function salvaEdicao(id, index, codpeca){
         pecas = local.get('pecas')
     
         GrowlNotification.notify({
-            title: `PEÇA ${codpeca} ATUALIZADA!`,
+            title: `PEÇA ${codigo} ATUALIZADA!`,
             type: 'success',
             position: 'top-right',
             closeTimeout: 5000
@@ -360,9 +360,9 @@ function salvaEdicao(id, index, codpeca){
     }
 }
 
-function editar(id, index, produto, nomepeca, descpeca, codpeca, qtde){
+function editar(id, index, produto, nome, descricao, codigo, qtde){
 
-    html =`<button onclick="salvaEdicao('${id}','${index}','${codpeca}')" id="saveBtn" class="buttons">Salvar</button>
+    html =`<button onclick="salvaEdicao('${id}','${index}','${codigo}')" id="saveBtn" class="buttons">Salvar</button>
     <button onclick="limpaEdicao('${index}')" id="cancelBtn" class="buttons">Cancelar</button>`
 
     $("tr[data-index='"+index+"']").addClass('selected');
@@ -372,19 +372,19 @@ function editar(id, index, produto, nomepeca, descpeca, codpeca, qtde){
     $(".excluir").attr("disabled","disabled");
     $(".editar").attr("disabled","disabled");
     $(".produtos-select").val(produto);
-    $(".nome").val(nomepeca);
-    $(".desc").val(descpeca);
-    $(".cod").val(codpeca);
+    $(".nome").val(nome);
+    $(".descricao").val(descricao);
+    $(".codigo").val(codigo);
     $(".qtde").val(qtde);
 }
 
-function confirmaEdicao(id, codpeca, nomepeca, codprod, index, produto, descpeca, qtde){
+function confirmaEdicao(id, codigo, nome, codigoprod, index, produto, descricao, qtde){
     GrowlNotification.closeAll();
     GrowlNotification.notify({
         title: 'Deseja Editar?',
         type: 'info',
         position: 'top-right',
-        description: `deseja realmente editar a peca ${codpeca} - ${nomepeca}, vinculado ao produto ${codprod}?`,
+        descricaoription: `deseja realmente editar a peca ${codigo} - ${nome}, vinculado ao produto ${codigoprod}?`,
         image: {
             visible: true,
             customImage: '../assets/growl-notification/img/default.png'
@@ -393,7 +393,7 @@ function confirmaEdicao(id, codpeca, nomepeca, codprod, index, produto, descpeca
         buttons: {
             action: {
                 text: 'Sim',
-                callback: () => editar(id, index, produto, nomepeca, descpeca, codpeca, qtde)
+                callback: () => editar(id, index, produto, nome, descricao, codigo, qtde)
             },
             cancel: {
                 text: 'Cancelar',                
@@ -406,11 +406,11 @@ function confirmaEdicao(id, codpeca, nomepeca, codprod, index, produto, descpeca
 function actions(value, row, index) {
     let excluir, editar = '';
     excluir =
-    `<button onclick="confirmaExclusao('${row.id}','${row.codpeca}','${row.nomepeca}','${row.codprod}')" class="excluir btn btn-danger" title="Excluir registro">
+    `<button onclick="confirmaExclusao('${row.id}','${row.codigo}','${row.nome}','${row.codigoprod}')" class="excluir btn btn-danger" title="Excluir registro">
         <i class="fa fa-trash" aria-hidden="true"></i>
     </button>`;
     editar =
-    `<button onclick="confirmaEdicao('${row.id}','${row.codpeca}','${row.nomepeca}','${row.codprod}', '${index}','${row.produto}','${row.descpeca}','${row.qtde}')" class="editar btn btn-primary" title="Editar registro">
+    `<button onclick="confirmaEdicao('${row.id}','${row.codigo}','${row.nome}','${row.codigoprod}', '${index}','${row.produto}','${row.descricao}','${row.qtde}')" class="editar btn btn-primary" title="Editar registro">
         <i class="fa fa-pencil" aria-hidden="true"></i>
     </button>`;
     return [
@@ -434,6 +434,7 @@ $('#submitBtn').click( (event) => {
             'pecas',
             data.local
         )
+        
         pecas = local.get('pecas')
     
         GrowlNotification.notify({

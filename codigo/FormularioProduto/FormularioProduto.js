@@ -1,3 +1,5 @@
+
+
 if (localStorage.getItem('produtos') === null) {
     localStorage.setItem('produtos', JSON.stringify([]));
 } 
@@ -7,7 +9,7 @@ let produtos = JSON.parse(localStorage.getItem('produtos'));
 
 function cadastroProduto () {
 
-    let jaExiste = false;
+    let temImpedimentoParaCadastro = false;
     let nome = document.getElementById("NOME").value;
     let descricao = document.getElementById("DESCRICAO").value;
     let codigo = document.getElementById("CODE").value;
@@ -24,15 +26,16 @@ function cadastroProduto () {
     produtos.map((el) => {
         if (el.nome === produto.nome) {
             alert('Produto já cadastrado');
-            jaExiste = true
+            temImpedimentoParaCadastro = true
         }})
 
-    if (jaExiste === false) {
+    if (temImpedimentoParaCadastro === false) {
         produtos.push(produto);
         localStorage.setItem('produtos', JSON.stringify(produtos));
         document.getElementById('FORMULARIO_PRODUTO').reset();
         listarDadosNaTabelaDeProduto()
         alert('Produto cadastrado com sucesso!');
+        window.location.assign('file:///home/gabriel/Desktop/puc/plf-es-2022-1-ti1-7946100-calculo-de-pecas-faltantes/codigo/FormularioPecas/index.html');
     }
 
 }

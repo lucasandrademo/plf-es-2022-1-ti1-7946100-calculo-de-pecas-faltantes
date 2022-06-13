@@ -1,37 +1,37 @@
 var produtos = [
     {
         "id": 'IYfFhyYpSUIWGVjAnPUyWevza',
-        "cod": 'CA2',
-        "name": 'Cabine Trator',
-        "desc": 'Cabine Trator',
+        "codigo": 'CA2',
+        "nome": 'Cabine Trator',
+        "descricao": 'Cabine Trator',
         "tkt": 6
     },
     {
         "id": 'AXjAETSFuUK5pVQUwJbR3iFSK',
-        "cod": 'CB2',
-        "name": 'Cabine Empilhadeira',
-        "desc": 'Cabine Empilhadeira',
+        "codigo": 'CB2',
+        "nome": 'Cabine Empilhadeira',
+        "descricao": 'Cabine Empilhadeira',
         "tkt": 6
     },
     {
         "id": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
-        "cod": 'C42',
-        "name": 'Sistema Embreagem',
-        "desc": 'Sistema Embreagem',
+        "codigo": 'C42',
+        "nome": 'Sistema Embreagem',
+        "descricao": 'Sistema Embreagem',
         "tkt": 3
     },
     {
         "id": '7WduClLpO6AUzylqMNmM2PRZe',
-        "cod": 'CGD',
-        "name": 'Motor CC',
-        "desc": 'Motor CC',
+        "codigo": 'CGD',
+        "nome": 'Motor CC',
+        "descricao": 'Motor CC',
         "tkt": 9
     },
     {
         "id": '8iyCp1KTWImAOb1qaneSf6t0A',
-        "cod": 'C9D',
-        "name": 'Motor CA',
-        "desc": 'Motor CA',
+        "codigo": 'C9D',
+        "nome": 'Motor CA',
+        "descricao": 'Motor CA',
         "tkt": 9
     }
 ]
@@ -40,72 +40,72 @@ var pecas = [
     {
         "id": 'IYfFhyYpSfER5VjAnPUyWevza',
         "produto": 'IYfFhyYpSUIWGVjAnPUyWevza',
-        "cod": 'DLJK4',
-        "name": 'Volante',
-        "desc": 'Guia para direção inclusa na cabine',
+        "codigo": 'DLJK4',
+        "nome": 'Volante',
+        "descricao": 'Guia para direção inclusa na cabine',
         "qtde": 3,
         "qtd_estoque": 0
     },
     {
         "id": 'IYfFhyYpSUIWGVjAfFhyYevza',
         "produto": 'IYfFhyYpSUIWGVjAnPUyWevza',
-        "cod": 'DUJK4',
-        "name": 'Cabaça',
-        "desc": 'Parte superior inserida no topo da cabine',
+        "codigo": 'DUJK4',
+        "nome": 'Cabaça',
+        "descricao": 'Parte superior inserida no topo da cabine',
         "qtde": 2,
         "qtd_estoque": 30
     },
     {
         "id": 'IYfFhytasfgYpSUIWGVjAfFhyYevza',
         "produto": 'IYfFhyYpSUIWGVjAnPUyWevza',
-        "cod": 'LDSF4',
-        "name": 'Teste',
-        "desc": 'teste',
+        "codigo": 'LDSF4',
+        "nome": 'Teste',
+        "descricao": 'teste',
         "qtde": 1,
         "qtd_estoque": 30
     },
     {
         "id": 'AXjAETSFuUK5p5VjAnPUyWevza',
         "produto": 'AXjAETSFuUK5pVQUwJbR3iFSK',
-        "cod": 'PDJ44',
-        "name": 'Guia D',
-        "desc": 'Guia do lado direito do motorista para controle',
+        "codigo": 'PDJ44',
+        "nome": 'Guia D',
+        "descricao": 'Guia do lado direito do motorista para controle',
         "qtde": 2,
         "qtd_estoque": 98
     },
     {
         "id": 'IYfFhyYpAXjAETSFuUK5pevza',
         "produto": 'AXjAETSFuUK5pVQUwJbR3iFSK',
-        "cod": 'PJJ43',
-        "name": 'Guia E',
-        "desc": 'Guia do lado esquerdo do motorista para controle',
+        "codigo": 'PJJ43',
+        "nome": 'Guia E',
+        "descricao": 'Guia do lado esquerdo do motorista para controle',
         "qtde": 3,
         "qtd_estoque": 2
     },
     {
         "id": 'IY43hyYpAXjAETSFuUK5pevza',
         "produto": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
-        "cod": 'PJJ23',
-        "name": 'Pedal',
-        "desc": 'Responsabilidade de controle',
+        "codigo": 'PJJ23',
+        "nome": 'Pedal',
+        "descricao": 'Responsabilidade de controle',
         "qtde": 2,
         "qtd_estoque": 1
     },
     {
         "id": 'IYfFhyYpAXjA0oSFuUK5pevza',
         "produto": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
-        "cod": 'PKD43',
-        "name": 'Guia',
-        "desc": 'Manual de guia',
+        "codigo": 'PKD43',
+        "nome": 'Guia',
+        "descricao": 'Manual de guia',
         "qtde": 1,
         "qtd_estoque": 2
     },
     {
         "id": 'IYfFhyYpAXjAEdpSFuUK5pevza',
         "produto": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
-        "cod": 'SLJ43',
-        "name": 'tela E',
-        "desc": 'Relacao Geral',
+        "codigo": 'SLJ43',
+        "nome": 'tela E',
+        "descricao": 'Relacao Geral',
         "qtde": 2,
         "qtd_estoque": 1
     }
@@ -164,13 +164,13 @@ function calcularFaltantes(dias) {
                 let dataCompra = moment(ordemCompra.dtEntrega, 'YYYY-MM-DD')
                 let produto = produtosDados.filter(function(obj) { return obj.id == ordemCompra.produto; });
                 let dataNecessidade = dataCompra.subtract(produto[0].tkt, "d").format("YYYY-MM-DD");
-                let necessidades = arrayNecessidade.filter(function(obj) { return obj.peca == pecaNecessaria.cod && obj.dtNecessidade == dataNecessidade; });
+                let necessidades = arrayNecessidade.filter(function(obj) { return obj.peca == pecaNecessaria.codigo && obj.dtNecessidade == dataNecessidade; });
                 if (necessidades.length === 0){
                     arrayNecessidade.push({
                         dtNecessidade: dataNecessidade,
                         atraso: dataNecessidade < hoje ? 1 : 0,
                         peca: pecaNecessaria.id,
-                        codpeca: pecaNecessaria.cod,
+                        codigopeca: pecaNecessaria.codigo,
                         qtdeNecessaria: ordemCompra.qtde*pecaNecessaria.qtde
                     })
                 }else{
@@ -187,7 +187,7 @@ function calcularFaltantes(dias) {
         if (necessidadeExistente.length === 0){
             necessidadeFinal.push({
                 peca: atrasado.peca,
-                codpeca: atrasado.codpeca,
+                codigopeca: atrasado.codigopeca,
                 qtde_dia0: atrasado.qtdeNecessaria
             })
         }else{
@@ -203,7 +203,7 @@ function calcularFaltantes(dias) {
             if (necessidadeExistente.length === 0){
                 necessidadeFinal.push({
                     peca: dia.peca,
-                    codpeca: dia.codpeca
+                    codigopeca: dia.codigopeca
                 })
             }
             necessidadeExistente = necessidadeFinal.filter(function(obj) { return obj.peca == dia.peca; });
@@ -232,7 +232,7 @@ function calcularFaltantes(dias) {
 }
 
 function setTemporario(){
-    local.set('produtos', produtos);
+    console.log('oi')
     local.set('pecas', pecas);
     local.set('compras', compras);
     local.set('margemPadrao', margemPadrao);

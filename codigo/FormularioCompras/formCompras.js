@@ -1,3 +1,4 @@
+console.log(localStorage.getItem('produtos'))
 const local = {
     set: (name, obj) => localStorage.setItem(name, JSON.stringify(obj)),
     clr: () => localStorage.clear(),

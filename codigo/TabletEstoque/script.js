@@ -3,36 +3,11 @@ const btnDecrementa$ = document.getElementById("btnDecrementa");
 const container = document.querySelector(".container");
 const p$ = document.getElementById("pContador");
 
-
-
-
 if (localStorage.getItem('produtos') === null) {
     localStorage.setItem('produtos', JSON.stringify([]));
 } 
 
-let produtos = JSON.parse(localStorage.getItem('produtos'));
-
-let pecas = [{
-
-    nome: "peça1",
-
-    codigo: "2132983219",
-
-    quantidade: 0,
-}, 
-
-{
-    nome: "peça2",
-
-    codigo: "71449832219",
-
-    quantidade: 0,
-    
-},
-
-
-]
-
+let pecas = JSON.parse(localStorage.getItem('pecas'));
 
 
 function listarDadosNaTabelaDePecas(){
@@ -42,18 +17,18 @@ function listarDadosNaTabelaDePecas(){
         let nomeP = document.createElement("P")
         let codigoP = document.createElement("P")
         let divQuantifica = document.createElement("DIV")
-        let quantidadeBttn1 = document.createElement("BUTTON")
-        let quantidadeP = document.createElement("P")
-        let quantidadeBttn2 = document.createElement("BUTTON")
+        let qtdeBttn1 = document.createElement("BUTTON")
+        let qtdeP = document.createElement("P")
+        let qtdeBttn2 = document.createElement("BUTTON")
 
-        quantidadeBttn1.setAttribute("ID", `incrementa_${pecas[i].codigo}`)
-        quantidadeBttn2.setAttribute("ID", `decrementa_${pecas[i].codigo}`)
-        quantidadeP.setAttribute("ID", `pContador_${pecas[i].codigo}`)
+        qtdeBttn1.setAttribute("ID", `incrementa_${pecas[i].codigo}`)
+        qtdeBttn2.setAttribute("ID", `decrementa_${pecas[i].codigo}`)
+        qtdeP.setAttribute("ID", `pContador_${pecas[i].codigo}`)
         
 
         let textoNome = document.createTextNode(`${pecas[i].nome}`);
         let textoCodigo = document.createTextNode(`${pecas[i].codigo}`);
-        let textoQuantidade = document.createTextNode(`${pecas[i].quantidade}`);
+        let textoqtde = document.createTextNode(`${pecas[i].qtde}`);
         let incremento = document.createTextNode(`+`)
         let decremento = document.createTextNode(`-`)
         
@@ -61,46 +36,48 @@ function listarDadosNaTabelaDePecas(){
         divQuantificacao.appendChild(codigoP)
         divQuantificacao.appendChild(divQuantifica)
 
-        divQuantifica.appendChild(quantidadeBttn2)
-        divQuantifica.appendChild(quantidadeP)
-        divQuantifica.appendChild(quantidadeBttn1)
+        divQuantifica.appendChild(qtdeBttn2)
+        divQuantifica.appendChild(qtdeP)
+        divQuantifica.appendChild(qtdeBttn1)
 
         nomeP.appendChild(textoNome)
         codigoP.appendChild(textoCodigo)
-        quantidadeBttn2.appendChild(decremento)
-        quantidadeBttn1.appendChild(incremento)
-        quantidadeP.appendChild(textoQuantidade)
+        qtdeBttn2.appendChild(decremento)
+        qtdeBttn1.appendChild(incremento)
+        qtdeP.appendChild(textoqtde)
 
         divQuantifica.className = "divQuantifica"
         divQuantificacao.className = "containerQuantificacao"
         nomeP.className = "paragrafoQuantifica"
         codigoP.className = "paragrafoQuantifica"
-        quantidadeBttn2.className = "btns"
-        quantidadeBttn1.className = "btns"
-        quantidadeP.className = "paragrafoContador"
+        qtdeBttn2.className = "btns"
+        qtdeBttn1.className = "btns"
+        qtdeP.className = "paragrafoContador"
         
         container.appendChild(divQuantificacao)
 
-        quantidadeBttn1.addEventListener("click", function(){
+        qtdeBttn1.addEventListener("click", function(){
             
-            pecas[i].quantidade++
-            quantidadeP.innerHTML = pecas[i].quantidade
+            pecas[i].qtde++
+            qtdeP.innerHTML = pecas[i].qtde
         
+            localStorage.setItem('pecas', JSON.stringify(pecas));
             
             });   
             
-        quantidadeBttn2.addEventListener("click", function(){
+        qtdeBttn2.addEventListener("click", function(){
 
-            pecas[i].quantidade--
+            pecas[i].qtde--
             
-            if(pecas[i].quantidade < 0) {
+            if(pecas[i].qtde < 0) {
             
-                pecas[i].quantidade = 0
+                pecas[i].qtde = 0
             
             
             }
             
-            quantidadeP.innerHTML = pecas[i].quantidade
+            qtdeP.innerHTML = pecas[i].qtde
+            localStorage.setItem('pecas', JSON.stringify(pecas));
             
         });
 
