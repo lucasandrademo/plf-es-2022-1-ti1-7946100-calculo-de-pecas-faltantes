@@ -30,7 +30,7 @@ btn$.addEventListener("click", function(){
 
     if(credenciais[0].nome == user$ && credenciais[0].senha == pass$){
 
-        window.location.href = "exemplo.html";
+        window.location.href = "../TelasPeçasFaltantes/index.html";
     }
     else if(credenciais[1].nome == user$ && credenciais[1].senha == pass$){
 
@@ -39,7 +39,7 @@ btn$.addEventListener("click", function(){
     else
     {
 
-        alert("Usuário e senha errados!");
+        alert("Usuário e/ou senha errados!");
     }
 
 });

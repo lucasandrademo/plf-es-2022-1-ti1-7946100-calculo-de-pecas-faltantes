@@ -78,163 +78,12 @@ const bts = {
 }
 const table = $('#telafaltantestable');
 
-var produtos;
-var pecas;
+let produtos = JSON.parse(localStorage.getItem("produtos"));
+let pecas = JSON.parse(localStorage.getItem("pecas"));
+let compras = JSON.parse(localStorage.getItem("compras"));
 
-
-var produtos = [
-    {
-        "id": 'IYfFhyYpSUIWGVjAnPUyWevza',
-        "codigo": 'CA2',
-        "nome": 'Cabine Trator',
-        "descricao": 'Cabine Trator',
-        "tkt": 6
-    },
-    {
-        "id": 'AXjAETSFuUK5pVQUwJbR3iFSK',
-        "codigo": 'CB2',
-        "nome": 'Cabine Empilhadeira',
-        "descricao": 'Cabine Empilhadeira',
-        "tkt": 6
-    },
-    {
-        "id": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
-        "codigo": 'C42',
-        "nome": 'Sistema Embreagem',
-        "descricao": 'Sistema Embreagem',
-        "tkt": 3
-    },
-    {
-        "id": '7WduClLpO6AUzylqMNmM2PRZe',
-        "codigo": 'CGD',
-        "nome": 'Motor CC',
-        "descricao": 'Motor CC',
-        "tkt": 9
-    },
-    {
-        "id": '8iyCp1KTWImAOb1qaneSf6t0A',
-        "codigo": 'C9D',
-        "nome": 'Motor CA',
-        "descricao": 'Motor CA',
-        "tkt": 9
-    }
-]
-
-var pecas = [
-    {
-        "id": 'IYfFhyYpSfER5VjAnPUyWevza',
-        "produto": 'IYfFhyYpSUIWGVjAnPUyWevza',
-        "cod": 'DLJK4',
-        "name": 'Volante',
-        "desc": 'Guia para direção inclusa na cabine',
-        "qtde": 3,
-        "qtd_estoque": 0
-    },
-    {
-        "id": 'IYfFhyYpSUIWGVjAfFhyYevza',
-        "produto": 'IYfFhyYpSUIWGVjAnPUyWevza',
-        "cod": 'DUJK4',
-        "name": 'Cabaça',
-        "desc": 'Parte superior inserida no topo da cabine',
-        "qtde": 2,
-        "qtd_estoque": 30
-    },
-    {
-        "id": 'IYfFhytasfgYpSUIWGVjAfFhyYevza',
-        "produto": 'IYfFhyYpSUIWGVjAnPUyWevza',
-        "cod": 'LDSF4',
-        "name": 'Teste',
-        "desc": 'teste',
-        "qtde": 1,
-        "qtd_estoque": 30
-    },
-    {
-        "id": 'AXjAETSFuUK5p5VjAnPUyWevza',
-        "produto": 'AXjAETSFuUK5pVQUwJbR3iFSK',
-        "cod": 'PDJ44',
-        "name": 'Guia D',
-        "desc": 'Guia do lado direito do motorista para controle',
-        "qtde": 2,
-        "qtd_estoque": 98
-    },
-    {
-        "id": 'IYfFhyYpAXjAETSFuUK5pevza',
-        "produto": 'AXjAETSFuUK5pVQUwJbR3iFSK',
-        "cod": 'PJJ43',
-        "name": 'Guia E',
-        "desc": 'Guia do lado esquerdo do motorista para controle',
-        "qtde": 3,
-        "qtd_estoque": 2
-    },
-    {
-        "id": 'IY43hyYpAXjAETSFuUK5pevza',
-        "produto": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
-        "cod": 'PJJ23',
-        "name": 'Pedal',
-        "desc": 'Responsabilidade de controle',
-        "qtde": 2,
-        "qtd_estoque": 1
-    },
-    {
-        "id": 'IYfFhyYpAXjA0oSFuUK5pevza',
-        "produto": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
-        "cod": 'PKD43',
-        "name": 'Guia',
-        "desc": 'Manual de guia',
-        "qtde": 1,
-        "qtd_estoque": 2
-    },
-    {
-        "id": 'IYfFhyYpAXjAEdpSFuUK5pevza',
-        "produto": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
-        "cod": 'SLJ43',
-        "name": 'tela E',
-        "desc": 'Relacao Geral',
-        "qtde": 2,
-        "qtd_estoque": 1
-    }
-]
-
-var compras = [
-    {
-        "id": "CwsLQLd7tbrQkmmYnlJEoJtkR",
-        "produto": 'IYfFhyYpSUIWGVjAnPUyWevza',
-        "qtde": 2,
-        "dtCompra": "2022-05-14",
-        "dtEntrega": "2022-05-24"
-    },
-    {
-        "id": "CwsLQLd7tbrQk654gasfaoJtkR",
-        "produto": 'AXjAETSFuUK5pVQUwJbR3iFSK',
-        "qtde": 10,
-        "dtCompra": "2022-05-17",
-        "dtEntrega": "2022-06-20"
-    },
-    {
-        "id": "CwsLQLd7tbrQk654gasfaoJ65R",
-        "produto": 'IYfFhyYpSUIWGVjAnPUyWevza',
-        "qtde": 3,
-        "dtCompra": "2022-05-17",
-        "dtEntrega": "2022-06-15"
-    },
-    {
-        "id": "oEoSJ3Owmx3lmR98F39LAgvcp",
-        "produto": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
-        "qtde": 92,
-        "dtCompra": "2022-04-14",
-        "dtEntrega": "2022-06-13"
-    },
-    {
-        "id": "oEoSJ3Owmx53mR98F39LAgvcp",
-        "produto": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
-        "qtde": 2,
-        "dtCompra": "2022-04-14",
-        "dtEntrega": "2022-06-14"
-    }
-]
 $(document).ready(() => {
     $('.bootstrap-table').css('width', '90%')
-    setTemporario()
     calcularFaltantes(5)
     setHeader()
     setTable()
@@ -276,16 +125,6 @@ function setTable(){
         bts.addRow(table,necessidade)
     });
 }
-
-
-function setTemporario(){
-        local.set('produtos', produtos);
-        local.set('pecas', pecas);
-        local.set('compras', compras);
-        
-}
-
-
 
 function calcularFaltantes(dias) {
     const ordensCompras = local.get('compras');
