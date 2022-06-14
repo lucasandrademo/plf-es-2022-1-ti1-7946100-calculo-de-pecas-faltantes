@@ -35,7 +35,6 @@ function cadastroProduto () {
         document.getElementById('FORMULARIO_PRODUTO').reset();
         listarDadosNaTabelaDeProduto()
         alert('Produto cadastrado com sucesso!');
-        window.location.assign('file:///home/gabriel/Desktop/puc/plf-es-2022-1-ti1-7946100-calculo-de-pecas-faltantes/codigo/FormularioPecas/index.html');
     }
 
 }
