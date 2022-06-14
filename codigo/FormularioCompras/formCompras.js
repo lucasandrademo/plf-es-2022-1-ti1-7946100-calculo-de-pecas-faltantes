@@ -1,3 +1,4 @@
+console.log(localStorage.getItem('produtos'))
 const local = {
     set: (name, obj) => localStorage.setItem(name, JSON.stringify(obj)),
     clr: () => localStorage.clear(),
@@ -97,72 +98,9 @@ const gera = {
 
 const table = $('#comprasTable');
 
-var produtos = [
-    {
-        "id": 'IYfFhyYpSUIWGVjAnPUyWevza',
-        "cod": 'CA2',
-        "name": 'Cabine Trator',
-        "desc": 'Cabine Trator',
-        "tkt": 6
-    },
-    {
-        "id": 'AXjAETSFuUK5pVQUwJbR3iFSK',
-        "cod": 'CB2',
-        "name": 'Cabine Empilhadeira',
-        "desc": 'Cabine Empilhadeira',
-        "tkt": 6
-    },
-    {
-        "id": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
-        "cod": 'C42',
-        "name": 'Sistema Embreagem',
-        "desc": 'Sistema Embreagem',
-        "tkt": 3
-    },
-    {
-        "id": '7WduClLpO6AUzylqMNmM2PRZe',
-        "cod": 'CGD',
-        "name": 'Motor CC',
-        "desc": 'Motor CC',
-        "tkt": 9
-    },
-    {
-        "id": '8iyCp1KTWImAOb1qaneSf6t0A',
-        "cod": 'C9D',
-        "name": 'Motor CA',
-        "desc": 'Motor CA',
-        "tkt": 9
-    }
-]
-
-var compras = [
-    {
-        "id": "CwsLQLd7tbrQkmmYnlJEoJtkR",
-        "produto": 'IYfFhyYpSUIWGVjAnPUyWevza',
-        "qtde": 92,
-        "dtCompra": "2022-05-14",
-        "dtEntrega": "2022-05-24"
-    },
-    {
-        "id": "oEoSJ3Owmx3lmR98F39LAgvcp",
-        "produto": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
-        "qtde": 92,
-        "dtCompra": "2022-04-14",
-        "dtEntrega": "2022-05-10"
-    }
-]
-
-var margemPadrao = 3
 var produtos;
 
-function setTemporario(){
-    local.set('produtos', produtos);
-    local.set('compras', compras);
-    local.set('margemPadrao', margemPadrao);
-}
-
 $(document).ready(() => {
-    setTemporario(); //fake localstorage
     produtos = local.get('produtos');
     setProdutosSelect();
     setComprasTable();
@@ -185,8 +123,18 @@ function selectOptions(obj, msg = '', showCod = true){
 }
 
 function setProdutosSelect(){
+    let pecas = local.get('pecas');
+    let produtosSelect = []
+    produtos.forEach(produto => {
+        pecas.forEach(peca => {
+            let select = produtosSelect.filter(function(obj) { return obj.id == peca.produto});
+            if(produto.id == peca.produto && select.length === 0){
+                produtosSelect.push(produto)
+            }
+        });
+    });
     const html = selectOptions(
-        produtos,
+        produtosSelect,
         'Selecione um Produto'
     );
     $('.produtos-select').html(html);

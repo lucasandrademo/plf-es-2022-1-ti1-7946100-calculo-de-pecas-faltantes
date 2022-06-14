@@ -1,0 +1,86 @@
+
+body{
+
+    background-color: #E2BEE4;
+    margin: 0;
+}
+
+.tituloPage{
+
+    
+    display: flex;
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.imgLogo{
+
+    
+    margin-right: 10px;
+}
+
+.componentesTop{
+
+    padding-top: 10px;
+}
+
+
+.container{
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}   
+
+.divLogin{
+
+    color: white;
+    font-family: sans-serif;
+
+    width: 300px;
+    height: 270px;
+
+    background-color: rgba( 0,  0, 0, 0.6);
+
+    border-radius: 15px;
+
+    text-align: center;
+    margin: auto;
+    transform: translateY(50%);
+
+}
+
+.TLogin{
+
+    padding-top: 15px;
+    font-size: 30px;
+}
+
+.buttonEnviar{
+
+    background-color: pink;
+
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    width: 200px;
+}
+
+.inputs{
+
+    border: none;
+    outline: none;
+
+    padding: 5px;
+    font-size: 15px;
+}

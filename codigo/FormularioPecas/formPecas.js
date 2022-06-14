@@ -1,34 +1,34 @@
 const local = {
-    set: (name, obj) => localStorage.setItem(name, JSON.stringify(obj)),
+    set: (nome, obj) => localStorage.setItem(nome, JSON.stringify(obj)),
     clr: () => localStorage.clear(),
-    get: (name) => JSON.parse(localStorage.getItem(name)),
-    rmv: (name) => localStorage.removeItem(name),
-    add: (nameObjc, objAdd) => {
-        const newObjc = JSON.parse(localStorage.getItem(nameObjc));
-        localStorage.removeItem(nameObjc);
+    get: (nome) => JSON.parse(localStorage.getItem(nome)),
+    rmv: (nome) => localStorage.removeItem(nome),
+    add: (nomeObjc, objAdd) => {
+        const newObjc = JSON.parse(localStorage.getItem(nomeObjc));
+        localStorage.removeItem(nomeObjc);
         newObjc.push(objAdd)
-        localStorage.setItem(nameObjc, JSON.stringify(newObjc));
+        localStorage.setItem(nomeObjc, JSON.stringify(newObjc));
     },
-    dell: (nameObjc, objDellId) => {
+    dell: (nomeObjc, objDellId) => {
         let newObjc = [];
-        JSON.parse(localStorage.getItem(nameObjc)).forEach(objc => {
+        JSON.parse(localStorage.getItem(nomeObjc)).forEach(objc => {
             if(objc.id != objDellId){
                 newObjc.push(objc)
             }
         });
-        localStorage.removeItem(nameObjc);
-        localStorage.setItem(nameObjc, JSON.stringify(newObjc));
+        localStorage.removeItem(nomeObjc);
+        localStorage.setItem(nomeObjc, JSON.stringify(newObjc));
     },
-    update: (nameObjc, ObjId, newObj) => {
+    update: (nomeObjc, ObjId, newObj) => {
         let newObjc = [];
-        JSON.parse(localStorage.getItem(nameObjc)).forEach(objc => {
+        JSON.parse(localStorage.getItem(nomeObjc)).forEach(objc => {
             if(objc.id != ObjId){
                 newObjc.push(objc)
             }
         });
-        localStorage.removeItem(nameObjc);
+        localStorage.removeItem(nomeObjc);
         newObjc.push(newObj)
-        localStorage.setItem(nameObjc, JSON.stringify(newObjc));
+        localStorage.setItem(nomeObjc, JSON.stringify(newObjc));
     }
 }
 
@@ -97,85 +97,12 @@ const gera = {
 
 const table = $('#pecasTable');
 
-var produtos = [
-    {
-        "id": 'IYfFhyYpSUIWGVjAnPUyWevza',
-        "cod": 'CA2',
-        "name": 'Cabine Trator',
-        "desc": 'Cabine Trator',
-        "tkt": 6
-    },
-    {
-        "id": 'AXjAETSFuUK5pVQUwJbR3iFSK',
-        "cod": 'CB2',
-        "name": 'Cabine Empilhadeira',
-        "desc": 'Cabine Empilhadeira',
-        "tkt": 6
-    },
-    {
-        "id": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
-        "cod": 'C42',
-        "name": 'Sistema Embreagem',
-        "desc": 'Sistema Embreagem',
-        "tkt": 3
-    },
-    {
-        "id": '7WduClLpO6AUzylqMNmM2PRZe',
-        "cod": 'CGD',
-        "name": 'Motor CC',
-        "desc": 'Motor CC',
-        "tkt": 9
-    },
-    {
-        "id": '8iyCp1KTWImAOb1qaneSf6t0A',
-        "cod": 'C9D',
-        "name": 'Motor CA',
-        "desc": 'Motor CA',
-        "tkt": 9
-    }
-]
-
-var pecas = [
-    {
-        "id": 'IYfFhyYpSfER5VjAnPUyWevza',
-        "produto": 'IYfFhyYpSUIWGVjAnPUyWevza',
-        "cod": 'DLJK4',
-        "name": 'Volante',
-        "desc": 'Guia para direção inclusa na cabine'
-    },
-    {
-        "id": 'IYfFhyYpSUIWGVjAfFhyYevza',
-        "produto": 'IYfFhyYpSUIWGVjAnPUyWevza',
-        "cod": 'DUJK4',
-        "name": 'Cabaça',
-        "desc": 'Parte superior inserida no topo da cabine'
-    },
-    {
-        "id": 'AXjAETSFuUK5p5VjAnPUyWevza',
-        "produto": 'AXjAETSFuUK5pVQUwJbR3iFSK',
-        "cod": 'PDJ44',
-        "name": 'Guia D',
-        "desc": 'Guia do lado direito do motorista para controle'
-    },
-    {
-        "id": 'IYfFhyYpAXjAETSFuUK5pevza',
-        "produto": 'AXjAETSFuUK5pVQUwJbR3iFSK',
-        "cod": 'PJJ43',
-        "name": 'Guia E',
-        "desc": 'Guia do lado esquerdo do motorista para controle'
-    }
-]
-
 var produtos;
-
-function setTemporario(){
-    local.set('produtos', produtos);
-    local.set('pecas', pecas);
-}
+var pecas;
 
 $(document).ready(() => {
-    setTemporario(); //fake localstorage
     produtos = local.get('produtos');
+    pecas = local.get('pecas');
     setProdutosSelect();
     setPecasTable();
     $('.bootstrap-table').css('width', '90%')
@@ -189,7 +116,7 @@ function setProdutosSelect(){
     $('.produtos-select').html(html);
 }
 
-function selectOptions(obj, msg = '', showCod = true){
+function selectOptions(obj, msg = '', showcodigo = true){
     let html = '';
     if(msg != ''){
         html += `<option value="" disabled selected hidden>${msg}</option>`;
@@ -197,8 +124,8 @@ function selectOptions(obj, msg = '', showCod = true){
     obj.forEach(item => {
         html +=
         `<option value="${item.id}">
-            ${showCod && item.cod + ' - '}
-            ${item.desc}
+            ${showcodigo && item.codigo + ' - '}
+            ${item.descricao}
         </option>`;
     });
     return html;
@@ -213,42 +140,111 @@ function setPecasTable(){
             { 
                 id: peca.id,
                 produto: peca.produto,
-                codprod: produto[0].cod,
-                nomeprod: produto[0].name,
-                codpeca: peca.cod,
-                nomepeca: peca.name,
-                descpeca: peca.desc
+                codigoprod: produto[0].codigo,
+                nomeprod: produto[0].nome,
+                codigo: peca.codigo,
+                nome: peca.nome,
+                descricao: peca.descricao,
+                qtde: peca.qtde
             }
         )
     });
+}
+
+function codigoValidate(codigo){
+    let dadoValido = true
+    pecas = local.get('pecas')
+    pecas.forEach(peca => {
+        if(peca.codigo == codigo){
+            dadoValido = false;
+            GrowlNotification.closeAll();
+            GrowlNotification.notify({
+                title: 'ERRO DE CADASTRO!',
+                descricaoription: 'Código da peça já cadastrado',
+                type: 'error',
+                position: 'top-right',
+                closeTimeout: 5000
+            });
+        }
+    });
+    return dadoValido;
 }
 
 function produtoValidate(prodId){
     let produtos = local.get('produtos');
     let filtrado = produtos.filter(function(obj) { return obj.id == prodId; });
     if(filtrado.length != 1){
+        filtrado[0] = false;
+        GrowlNotification.closeAll();
         GrowlNotification.notify({
             title: 'ERRO DE CADASTRO!',
-            description: 'Cadastro de Produto defeituoso, favor, entrar em contato com o responsável',
+            descricaoription: 'Cadastro de Produto defeituoso, favor, entrar em contato com o responsável',
             type: 'error',
             position: 'top-right',
             closeTimeout: 5000
         });
-        return false;
     }
     return filtrado[0];
 }
 
-function getDadosFormValidate(id = null){
+function qtdeValidate(quantidade){
+    let dadoValido = true
+    if(quantidade == '' || quantidade <= 0 || quantidade != Math.trunc(quantidade)){
+        GrowlNotification.closeAll();
+        GrowlNotification.notify({
+            title: 'ERRO DE CADASTRO!',
+            descricaoription: 'Quantidade deve ser um número inteiro e positivo',
+            type: 'error',
+            position: 'top-right',
+            closeTimeout: 5000
+        });
+        dadoValido = false
+    }
+    return dadoValido;
+}
+
+function requiredValidate(nome, codigo){
+    let dadoValido = true
+    if(
+        nome == '' ||
+        codigo == ''
+    ){
+        GrowlNotification.closeAll();
+        GrowlNotification.notify({
+            title: 'ERRO DE CADASTRO!',
+            descricaoription: 'Dados obrigatórios não preenchidos',
+            type: 'error',
+            position: 'top-right',
+            closeTimeout: 5000
+        });
+        obrigatorios = false
+    }
+    return dadoValido;
+}
+
+function getEstoque(id){
+    let estoque = 0;
+    pecas.forEach(peca => {
+        if(peca.id = id){
+            estoque = peca.qtd_estoque
+        }
+    });
+    return estoque
+}
+
+function getDadosPecasValidate(id = null){
     const prodId = $(".produtos-select").val();
-    const codpeca = $(".cod").val();
-    const nomepeca = $(".nome").val();
-    const descpeca = $(".desc").val();
+    const codigo = $(".codigo").val();
+    const nome = $(".nome").val();
+    const descricao = $(".descricao").val();
+    const quantidade = $(".qtde").val();
+    const qtdeValido = qtdeValidate(quantidade);
     const produtoValido = produtoValidate(prodId);
-
-    if(produtoValido == false) return false;
-
+    let codigoValido = true;
+    const qtdeEstoque = getEstoque(id);
+    const obrigatoriosValido = requiredValidate(nome, codigo);
     if(id==null){
+        codigoValido = codigoValidate(codigo);
         id = gera.id('pecas')
     
         while(id == false){
@@ -256,26 +252,39 @@ function getDadosFormValidate(id = null){
         }
     }
 
+    if(
+        produtoValido == false ||
+        codigoValido == false ||
+        obrigatoriosValido == false ||
+        qtdeValido == false
+    ){
+        return false;
+    }
+
     return [
         {
             bts: {
                 id: id,
                 produto: prodId,
-                codprod: produtoValido.cod,
-                nomeprod: produtoValido.name,
-                codpeca: codpeca,
-                nomepeca: nomepeca,
-                descpeca: descpeca,
+                codigoprod: produtoValido.codigo,
+                nomeprod: produtoValido.nome,
+                codigo: codigo,
+                nome: nome,
+                descricao: descricao,
+                qtde: quantidade
             },
             local: {
                 id: id,
                 produto: prodId,
-                cod: codpeca,
-                name: nomepeca,
-                desc: descpeca,
+                codigo: codigo,
+                nome: nome,
+                descricao: descricao,
+                qtde: quantidade,
+                qtd_estoque: qtdeEstoque
             }
         }
     ]
+
 }
 
 function excluir(id){
@@ -283,13 +292,13 @@ function excluir(id){
     bts.dellRow(table, id)
 }
 
-function confirmaExclusao(id, codpeca, nomepeca, codprod){
+function confirmaExclusao(id, codigo, nome, codigoprod){
     GrowlNotification.closeAll();
     GrowlNotification.notify({
         title: 'CONFIRMAÇÃO DE EXCLUSAO!',
         type: 'warning',
         position: 'top-right',
-        description: `deseja realmente excluir a peca ${codpeca} - ${nomepeca}, vinculado ao produto ${codprod}?`,
+        descricaoription: `deseja realmente excluir a peca ${codigo} - ${nome}, vinculado ao produto ${codigoprod}?`,
         image: {
             visible: true,
             customImage: '../assets/growl-notification/img/warning.png'
@@ -317,43 +326,43 @@ function limpaEdicao(index){
     $(".editar").removeAttr("disabled");
     $(".produtos-select").val('');
     $(".nome").val('');
-    $(".desc").val('');
-    $(".cod").val('');
+    $(".descricao").val('');
+    $(".codigo").val('');
+    $(".qtde").val('');
 }
 
-function salvaEdicao(id, index, codpeca){
-    const validData = getDadosFormValidate(id)
+function salvaEdicao(id, index, codigo){
+    const validData = getDadosPecasValidate(id)
 
-    if(validData == false){
-        return
+    if(validData != false){
+        const data = validData[0];
+
+        bts.update(
+            table,
+            id,
+            index,
+            data.bts
+        )
+        local.update(
+            'pecas',
+            id,
+            data.local
+        )
+        limpaEdicao(index);
+        pecas = local.get('pecas')
+    
+        GrowlNotification.notify({
+            title: `PEÇA ${codigo} ATUALIZADA!`,
+            type: 'success',
+            position: 'top-right',
+            closeTimeout: 5000
+        });
     }
-
-    const data = validData[0];
-
-    bts.update(
-        table,
-        id,
-        index,
-        data.bts
-    )
-    local.update(
-        'pecas',
-        id,
-        data.local
-    )
-    limpaEdicao(index);
-
-    GrowlNotification.notify({
-        title: `PEÇA ${codpeca} ATUALIZADA!`,
-        type: 'success',
-        position: 'top-right',
-        closeTimeout: 5000
-    });
 }
 
-function editar(id, index, produto, nomepeca, descpeca, codpeca){
+function editar(id, index, produto, nome, descricao, codigo, qtde){
 
-    html =`<button onclick="salvaEdicao('${id}','${index}','${codpeca}')" id="saveBtn" class="buttons">Salvar</button>
+    html =`<button onclick="salvaEdicao('${id}','${index}','${codigo}')" id="saveBtn" class="buttons">Salvar</button>
     <button onclick="limpaEdicao('${index}')" id="cancelBtn" class="buttons">Cancelar</button>`
 
     $("tr[data-index='"+index+"']").addClass('selected');
@@ -363,18 +372,19 @@ function editar(id, index, produto, nomepeca, descpeca, codpeca){
     $(".excluir").attr("disabled","disabled");
     $(".editar").attr("disabled","disabled");
     $(".produtos-select").val(produto);
-    $(".nome").val(nomepeca);
-    $(".desc").val(descpeca);
-    $(".cod").val(codpeca);
+    $(".nome").val(nome);
+    $(".descricao").val(descricao);
+    $(".codigo").val(codigo);
+    $(".qtde").val(qtde);
 }
 
-function confirmaEdicao(id, codpeca, nomepeca, codprod, index, produto, descpeca){
+function confirmaEdicao(id, codigo, nome, codigoprod, index, produto, descricao, qtde){
     GrowlNotification.closeAll();
     GrowlNotification.notify({
         title: 'Deseja Editar?',
         type: 'info',
         position: 'top-right',
-        description: `deseja realmente editar a peca ${codpeca} - ${nomepeca}, vinculado ao produto ${codprod}?`,
+        descricaoription: `deseja realmente editar a peca ${codigo} - ${nome}, vinculado ao produto ${codigoprod}?`,
         image: {
             visible: true,
             customImage: '../assets/growl-notification/img/default.png'
@@ -383,7 +393,7 @@ function confirmaEdicao(id, codpeca, nomepeca, codprod, index, produto, descpeca
         buttons: {
             action: {
                 text: 'Sim',
-                callback: () => editar(id, index, produto, nomepeca, descpeca, codpeca)
+                callback: () => editar(id, index, produto, nome, descricao, codigo, qtde)
             },
             cancel: {
                 text: 'Cancelar',                
@@ -396,11 +406,11 @@ function confirmaEdicao(id, codpeca, nomepeca, codprod, index, produto, descpeca
 function actions(value, row, index) {
     let excluir, editar = '';
     excluir =
-    `<button onclick="confirmaExclusao('${row.id}','${row.codpeca}','${row.nomepeca}','${row.codprod}')" class="excluir btn btn-danger" title="Excluir registro">
+    `<button onclick="confirmaExclusao('${row.id}','${row.codigo}','${row.nome}','${row.codigoprod}')" class="excluir btn btn-danger" title="Excluir registro">
         <i class="fa fa-trash" aria-hidden="true"></i>
     </button>`;
     editar =
-    `<button onclick="confirmaEdicao('${row.id}','${row.codpeca}','${row.nomepeca}','${row.codprod}', '${index}','${row.produto}','${row.descpeca}')" class="editar btn btn-primary" title="Editar registro">
+    `<button onclick="confirmaEdicao('${row.id}','${row.codigo}','${row.nome}','${row.codigoprod}', '${index}','${row.produto}','${row.descricao}','${row.qtde}')" class="editar btn btn-primary" title="Editar registro">
         <i class="fa fa-pencil" aria-hidden="true"></i>
     </button>`;
     return [
@@ -411,27 +421,27 @@ function actions(value, row, index) {
 
 $('#submitBtn').click( (event) => {
     event.preventDefault();
-    const validData = getDadosFormValidate()
+    const validData = getDadosPecasValidate()
 
-    if(validData == false){
-        return
+    if(validData != false){
+        const data = validData[0]
+
+        bts.addRow(
+            table,
+            data.bts
+        )
+        local.add(
+            'pecas',
+            data.local
+        )
+        
+        pecas = local.get('pecas')
+    
+        GrowlNotification.notify({
+            title: 'CADASTRO REALIZADO!',
+            type: 'success',
+            position: 'top-right',
+            closeTimeout: 5000
+        });
     }
-
-    const data = validData[0]
-
-    bts.addRow(
-        table,
-        data.bts
-    )
-    local.add(
-        'pecas',
-        data.local
-    )
-
-    GrowlNotification.notify({
-        title: 'CADASTRO REALIZADO!',
-        type: 'success',
-        position: 'top-right',
-        closeTimeout: 5000
-    });
 })
