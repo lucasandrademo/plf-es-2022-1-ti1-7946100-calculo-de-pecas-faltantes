@@ -115,8 +115,8 @@ function selectOptions(obj, msg = '', showCod = true){
     obj.forEach(item => {
         html +=
         `<option value="${item.id}">
-            ${showCod && item.cod + ' - '}
-            ${item.desc}
+            ${showCod && item.codigo + ' - '}
+            ${item.descricao}
         </option>`;
     });
     return html;
@@ -149,8 +149,8 @@ function setComprasTable(){
             {
                 id: compra.id,
                 produto: compra.produto,
-                cod: produto[0].cod,
-                desc: produto[0].desc,
+                cod: produto[0].codigo,
+                desc: produto[0].descricao,
                 qtde: compra.qtde,
                 dtCompra: compra.dtCompra,
                 dtEntrega: compra.dtEntrega
@@ -243,8 +243,8 @@ function getDadosFormValidate(id = null){
             bts: {
                 id: id,
                 produto: prodId,
-                cod: produtoValido.cod,
-                desc: produtoValido.desc,
+                cod: produtoValido.codigo,
+                desc: produtoValido.descricao,
                 qtde: qtd,
                 dtCompra: dtCompra,
                 dtEntrega: dtEntrega,
