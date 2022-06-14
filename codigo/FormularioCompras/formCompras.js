@@ -1,35 +1,35 @@
-console.log(localStorage.getItem('produtos'))
+
 const local = {
-    set: (name, obj) => localStorage.setItem(name, JSON.stringify(obj)),
+    set: (nome, obj) => localStorage.setItem(nome, JSON.stringify(obj)),
     clr: () => localStorage.clear(),
-    get: (name) => JSON.parse(localStorage.getItem(name)),
-    rmv: (name) => localStorage.removeItem(name),
-    add: (nameObjc, objAdd) => {
-        const newObjc = JSON.parse(localStorage.getItem(nameObjc));
-        localStorage.removeItem(nameObjc);
+    get: (nome) => JSON.parse(localStorage.getItem(nome)),
+    rmv: (nome) => localStorage.removeItem(nome),
+    add: (nomeObjc, objAdd) => {
+        const newObjc = JSON.parse(localStorage.getItem(nomeObjc));
+        localStorage.removeItem(nomeObjc);
         newObjc.push(objAdd)
-        localStorage.setItem(nameObjc, JSON.stringify(newObjc));
+        localStorage.setItem(nomeObjc, JSON.stringify(newObjc));
     },
-    dell: (nameObjc, objDellId) => {
+    dell: (nomeObjc, objDellId) => {
         let newObjc = [];
-        JSON.parse(localStorage.getItem(nameObjc)).forEach(objc => {
+        JSON.parse(localStorage.getItem(nomeObjc)).forEach(objc => {
             if(objc.id != objDellId){
                 newObjc.push(objc)
             }
         });
-        localStorage.removeItem(nameObjc);
-        localStorage.setItem(nameObjc, JSON.stringify(newObjc));
+        localStorage.removeItem(nomeObjc);
+        localStorage.setItem(nomeObjc, JSON.stringify(newObjc));
     },
-    update: (nameObjc, ObjId, newObj) => {
+    update: (nomeObjc, ObjId, newObj) => {
         let newObjc = [];
-        JSON.parse(localStorage.getItem(nameObjc)).forEach(objc => {
+        JSON.parse(localStorage.getItem(nomeObjc)).forEach(objc => {
             if(objc.id != ObjId){
                 newObjc.push(objc)
             }
         });
-        localStorage.removeItem(nameObjc);
+        localStorage.removeItem(nomeObjc);
         newObjc.push(newObj)
-        localStorage.setItem(nameObjc, JSON.stringify(newObjc));
+        localStorage.setItem(nomeObjc, JSON.stringify(newObjc));
     }
 }
 
@@ -107,7 +107,7 @@ $(document).ready(() => {
     $('.bootstrap-table').css('width', '90%')
 })
 
-function selectOptions(obj, msg = '', showCod = true){
+function selectOptions(obj, msg = '', showCodigo = true){
     let html = '';
     if(msg != ''){
         html += `<option value="" disabled selected hidden>${msg}</option>`;
@@ -115,7 +115,7 @@ function selectOptions(obj, msg = '', showCod = true){
     obj.forEach(item => {
         html +=
         `<option value="${item.id}">
-            ${showCod && item.codigo + ' - '}
+            ${showCodigo && item.codigo + ' - '}
             ${item.descricao}
         </option>`;
     });
@@ -149,8 +149,8 @@ function setComprasTable(){
             {
                 id: compra.id,
                 produto: compra.produto,
-                cod: produto[0].codigo,
-                desc: produto[0].descricao,
+                codigo: produto[0].codigo,
+                descricao: produto[0].descricao,
                 qtde: compra.qtde,
                 dtCompra: compra.dtCompra,
                 dtEntrega: compra.dtEntrega
@@ -165,7 +165,7 @@ function produtoValidate(prodId){
     if(filtrado.length != 1){
         GrowlNotification.notify({
             title: 'ERRO DE CADASTRO!',
-            description: 'Cadastro de Produto defeituoso, favor, entrar em contato com o responsável',
+            descricaoription: 'Cadastro de Produto defeituoso, favor, entrar em contato com o responsável',
             type: 'error',
             position: 'top-right',
             closeTimeout: 5000
@@ -181,7 +181,7 @@ function dataValidate(dataCompra, dataEntrega, tkt){
     if(!isValid){
         GrowlNotification.notify({
             title: 'ERRO DE CADASTRO!',
-            description: 'A fábrica não é capaz de entregar esse produto no tempo solicitado',
+            descricaoription: 'A fábrica não é capaz de entregar esse produto no tempo solicitado',
             type: 'error',
             position: 'top-right',
             closeTimeout: 5000
@@ -194,7 +194,7 @@ function validaQtd(qtd){
     if(qtd == null || qtd == '' || qtd <= 0){
         GrowlNotification.notify({
             title: 'ERRO DE CADASTRO!',
-            description: 'Necessário inserir uma quantidade',
+            descricaoription: 'Necessário inserir uma quantidade',
             type: 'error',
             position: 'top-right',
             closeTimeout: 5000
@@ -243,8 +243,8 @@ function getDadosFormValidate(id = null){
             bts: {
                 id: id,
                 produto: prodId,
-                cod: produtoValido.codigo,
-                desc: produtoValido.descricao,
+                codigo: produtoValido.codigo,
+                descricao: produtoValido.descricao,
                 qtde: qtd,
                 dtCompra: dtCompra,
                 dtEntrega: dtEntrega,
@@ -265,13 +265,13 @@ function excluir(id){
     bts.dellRow(table, id)
 }
 
-function confirmaExclusao(id, cod, desc, dtEntrega){
+function confirmaExclusao(id, codigo, descricao, dtEntrega){
     GrowlNotification.closeAll();
     GrowlNotification.notify({
         title: 'CONFIRMAÇÃO DE EXCLUSAO!',
         type: 'warning',
         position: 'top-right',
-        description: `deseja realmente excluir o dado  ${cod} - ${desc}, com data de entrega para dia ${dtEntrega}?`,
+        descricaoription: `deseja realmente excluir o dado  ${codigo} - ${descricao}, com data de entrega para dia ${dtEntrega}?`,
         image: {
             visible: true,
             customImage: '../assets/growl-notification/img/warning.png'
@@ -344,13 +344,13 @@ function editar(id, produto, qtde, dtCompra, dtEntrega, index){
     $(".produtos-select").attr("disabled","disabled");
 }
 
-function confirmaEdicao(id, produto, cod, desc, qtde, dtCompra, dtEntrega, index){
+function confirmaEdicao(id, produto, codigo, descricao, qtde, dtCompra, dtEntrega, index){
     GrowlNotification.closeAll();
     GrowlNotification.notify({
         title: 'Deseja Editar?',
         type: 'info',
         position: 'top-right',
-        description: `deseja realmente editar o dado  ${cod} - ${desc}, com data de entrega para dia ${dtEntrega}?`,
+        descricaoription: `deseja realmente editar o dado  ${codigo} - ${descricao}, com data de entrega para dia ${dtEntrega}?`,
         image: {
             visible: true,
             customImage: '../assets/growl-notification/img/default.png'
@@ -372,11 +372,11 @@ function confirmaEdicao(id, produto, cod, desc, qtde, dtCompra, dtEntrega, index
 function actions(value, row, index) {
     let excluir, editar = '';
     excluir =
-    `<button onclick="confirmaExclusao('${row.id}','${row.cod}','${row.desc}','${row.dtEntrega}')" class="excluir btn btn-danger" title="Excluir registro">
+    `<button onclick="confirmaExclusao('${row.id}','${row.codigo}','${row.descricao}','${row.dtEntrega}')" class="excluir btn btn-danger" title="Excluir registro">
         <i class="fa fa-trash" aria-hidden="true"></i>
     </button>`;
     editar =
-    `<button onclick="confirmaEdicao('${row.id}', '${row.produto}','${row.cod}','${row.desc}','${row.qtde}','${row.dtCompra}', '${row.dtEntrega}','${index}')" class="editar btn btn-primary" title="Editar registro">
+    `<button onclick="confirmaEdicao('${row.id}', '${row.produto}','${row.codigo}','${row.descricao}','${row.qtde}','${row.dtCompra}', '${row.dtEntrega}','${index}')" class="editar btn btn-primary" title="Editar registro">
         <i class="fa fa-pencil" aria-hidden="true"></i>
     </button>`;
     return [
