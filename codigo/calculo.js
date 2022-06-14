@@ -1,40 +1,4 @@
-var produtos = [
-    {
-        "id": 'IYfFhyYpSUIWGVjAnPUyWevza',
-        "codigo": 'CA2',
-        "nome": 'Cabine Trator',
-        "descricao": 'Cabine Trator',
-        "tkt": 6
-    },
-    {
-        "id": 'AXjAETSFuUK5pVQUwJbR3iFSK',
-        "codigo": 'CB2',
-        "nome": 'Cabine Empilhadeira',
-        "descricao": 'Cabine Empilhadeira',
-        "tkt": 6
-    },
-    {
-        "id": 'QZ8NPsoeLhmbRT2MmrA4LiAbq',
-        "codigo": 'C42',
-        "nome": 'Sistema Embreagem',
-        "descricao": 'Sistema Embreagem',
-        "tkt": 3
-    },
-    {
-        "id": '7WduClLpO6AUzylqMNmM2PRZe',
-        "codigo": 'CGD',
-        "nome": 'Motor CC',
-        "descricao": 'Motor CC',
-        "tkt": 9
-    },
-    {
-        "id": '8iyCp1KTWImAOb1qaneSf6t0A',
-        "codigo": 'C9D',
-        "nome": 'Motor CA',
-        "descricao": 'Motor CA',
-        "tkt": 9
-    }
-]
+
 
 var pecas = [
     {
