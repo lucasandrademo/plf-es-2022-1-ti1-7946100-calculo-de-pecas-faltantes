@@ -139,13 +139,13 @@ function calcularFaltantes(dias) {
                 let dataCompra = moment(ordemCompra.dtEntrega, 'YYYY-MM-DD')
                 let produto = produtosDados.filter(function(obj) { return obj.id == ordemCompra.produto; });
                 let dataNecessidade = dataCompra.subtract(produto[0].tkt, "d").format("YYYY-MM-DD");
-                let necessidades = arrayNecessidade.filter(function(obj) { return obj.peca == pecaNecessaria.cod && obj.dtNecessidade == dataNecessidade; });
+                let necessidades = arrayNecessidade.filter(function(obj) { return obj.peca == pecaNecessaria.codigo && obj.dtNecessidade == dataNecessidade; });
                 if (necessidades.length === 0){
                     arrayNecessidade.push({
                         dtNecessidade: dataNecessidade,
                         atraso: dataNecessidade < hoje ? 1 : 0,
                         peca: pecaNecessaria.id,
-                        codpeca: pecaNecessaria.cod,
+                        codpeca: pecaNecessaria.codigo,
                         qtdeNecessaria: ordemCompra.qtde*pecaNecessaria.qtde
                     })
                 }else{
@@ -172,6 +172,7 @@ function calcularFaltantes(dias) {
 
     for (let index = 0; index < dias; index++) {
         let diasNec = arrayNecessidade.filter(function(obj) { return obj.dtNecessidade == moment(hoje).add(index, "d").format("YYYY-MM-DD") });
+        console.log(diasNec)
         let nomeQtdDia = 'qtde_dia' + (index + 1)
         diasNec.forEach(dia => {
             let necessidadeExistente = necessidadeFinal.filter(function(obj) { return obj.peca == dia.peca; });
