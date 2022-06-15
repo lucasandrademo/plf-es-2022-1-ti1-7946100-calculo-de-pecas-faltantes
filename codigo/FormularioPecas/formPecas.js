@@ -101,6 +101,7 @@ var produtos;
 var pecas;
 
 $(document).ready(() => {
+    local.set('pecas', [])
     produtos = local.get('produtos');
     pecas = local.get('pecas');
     setProdutosSelect();
