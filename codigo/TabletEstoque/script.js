@@ -28,7 +28,7 @@ function listarDadosNaTabelaDePecas(){
 
         let textoNome = document.createTextNode(`${pecas[i].nome}`);
         let textoCodigo = document.createTextNode(`${pecas[i].codigo}`);
-        let textoqtde = document.createTextNode(`${pecas[i].qtde}`);
+        let textoqtde = document.createTextNode(`${pecas[i].qtd_estoque}`);
         let incremento = document.createTextNode(`+`)
         let decremento = document.createTextNode(`-`)
         
@@ -58,8 +58,8 @@ function listarDadosNaTabelaDePecas(){
 
         qtdeBttn1.addEventListener("click", function(){
             
-            pecas[i].qtde++
-            qtdeP.innerHTML = pecas[i].qtde
+            pecas[i].qtd_estoque++
+            qtdeP.innerHTML = pecas[i].qtd_estoque
         
             localStorage.setItem('pecas', JSON.stringify(pecas));
             
@@ -67,16 +67,16 @@ function listarDadosNaTabelaDePecas(){
             
         qtdeBttn2.addEventListener("click", function(){
 
-            pecas[i].qtde--
+            pecas[i].qtd_estoque--
             
-            if(pecas[i].qtde < 0) {
+            if(pecas[i].qtd_estoque < 0) {
             
-                pecas[i].qtde = 0
+                pecas[i].qtd_estoque = 0
             
             
             }
             
-            qtdeP.innerHTML = pecas[i].qtde
+            qtdeP.innerHTML = pecas[i].qtd_estoque
             localStorage.setItem('pecas', JSON.stringify(pecas));
             
         });
