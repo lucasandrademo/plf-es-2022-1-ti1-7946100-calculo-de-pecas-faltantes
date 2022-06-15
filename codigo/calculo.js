@@ -234,7 +234,6 @@ function calcularFaltantes(dias) {
 }
 
 function setTemporario(){
-    console.log('oi')
     local.set('pecas', pecas);
     local.set('compras', compras);
     local.set('margemPadrao', margemPadrao);

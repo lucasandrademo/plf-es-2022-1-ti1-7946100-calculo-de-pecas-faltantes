@@ -2,6 +2,22 @@
 
 if (localStorage.getItem('produtos') === null) {
     localStorage.setItem('produtos', JSON.stringify([]));
+}
+
+if (localStorage.getItem('pecas') === null) {
+    localStorage.setItem('pecas', JSON.stringify([]));
+} 
+
+if (localStorage.getItem('compras') === null) {
+    localStorage.setItem('compras', JSON.stringify([]));
+} 
+
+if (localStorage.getItem('necessidades') === null) {
+    localStorage.setItem('necessidades', JSON.stringify([]));
+}
+
+if (localStorage.getItem('margemPadrao') === null) {
+    localStorage.setItem('margemPadrao', JSON.stringify([3]));
 } 
 
 let produtos = JSON.parse(localStorage.getItem('produtos'));
