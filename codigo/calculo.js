@@ -153,6 +153,86 @@ var produtos = [
 
 var margemPadrao = 3
 
+function calcularFaltantes(dias) {
+    const ordensCompras = local.get('compras');
+    const pecasComprados = local.get('pecas');
+    const produtosDados = local.get('produtos');
+    const arrayNecessidade = [];
+    let hoje = moment().format("YYYY-MM-DD");
+
+    pecasComprados.forEach(pecaNecessaria => {
+        ordensCompras.forEach(ordemCompra => {
+            if(ordemCompra.produto == pecaNecessaria.produto){
+                let dataCompra = moment(ordemCompra.dtEntrega, 'YYYY-MM-DD')
+                let produto = produtosDados.filter(function(obj) { return obj.id == ordemCompra.produto; });
+                let dataNecessidade = dataCompra.subtract(produto[0].tkt, "d").format("YYYY-MM-DD");
+                let necessidades = arrayNecessidade.filter(function(obj) { return obj.peca == pecaNecessaria.codigo && obj.dtNecessidade == dataNecessidade; });
+                if (necessidades.length === 0){
+                    arrayNecessidade.push({
+                        dtNecessidade: dataNecessidade,
+                        atraso: dataNecessidade < hoje ? 1 : 0,
+                        peca: pecaNecessaria.id,
+                        codigopeca: pecaNecessaria.codigo,
+                        qtdeNecessaria: ordemCompra.qtde*pecaNecessaria.qtde
+                    })
+                }else{
+                    necessidades[0].qtdeNecessaria = necessidades[0].qtdeNecessaria + (ordemCompra.qtde*pecaNecessaria.qtde)
+                }
+            }
+        })
+    });
+
+    let atrasados = arrayNecessidade.filter(function(obj) { return obj.atraso == 1 });
+    let necessidadeFinal = [];
+    atrasados.forEach(atrasado => {
+        let necessidadeExistente = necessidadeFinal.filter(function(obj) { return obj.peca == atrasado.peca; });
+        if (necessidadeExistente.length === 0){
+            necessidadeFinal.push({
+                peca: atrasado.peca,
+                codigopeca: atrasado.codigopeca,
+                qtde_dia0: atrasado.qtdeNecessaria
+            })
+        }else{
+            necessidadeExistente[0].qtde_dia0 += atrasado.qtdeNecessaria
+        }
+    });
+
+    for (let index = 0; index < dias; index++) {
+        let diasNec = arrayNecessidade.filter(function(obj) { return obj.dtNecessidade == moment(hoje).add(index, "d").format("YYYY-MM-DD") });
+        let nomeQtdDia = 'qtde_dia' + (index + 1)
+        diasNec.forEach(dia => {
+            let necessidadeExistente = necessidadeFinal.filter(function(obj) { return obj.peca == dia.peca; });
+            if (necessidadeExistente.length === 0){
+                necessidadeFinal.push({
+                    peca: dia.peca,
+                    codigopeca: dia.codigopeca
+                })
+            }
+            necessidadeExistente = necessidadeFinal.filter(function(obj) { return obj.peca == dia.peca; });
+            necessidadeExistente[0][nomeQtdDia] = dia.qtdeNecessaria
+        });
+    }
+    necessidadeFinal.forEach(nec => {
+        let peca = pecasComprados.filter(function(obj) { return obj.id == nec.peca });
+        let estoque = peca[0].qtd_estoque
+        Object.keys(nec).forEach((key) => {
+            if(key.indexOf("qtde_dia") != -1){
+                nec[key] -= estoque
+                if(nec[key] < 0){
+                    estoque = Math.abs(nec[key])
+                    nec[key] = 0
+                }else{
+                    estoque = 0
+                }
+            }else{
+            }
+        });          
+    });
+
+    local.set('necessidades', necessidadeFinal)
+
+}
+
 function setTemporario(){
     console.log('oi')
     local.set('pecas', pecas);
@@ -162,4 +242,5 @@ function setTemporario(){
 
 $(document).ready(() => {
     setTemporario(); //fake localstorage
+    calcularFaltantes(8);
 })
