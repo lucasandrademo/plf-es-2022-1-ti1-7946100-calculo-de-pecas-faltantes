@@ -90,14 +90,16 @@ body{
 .containerEspecificacoes{
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 40px;
+    gap: 30px;
+    padding: 30px;
 }
 
 .titulosEspecificacoes{
 
-    width: 250px;
-    height: 40px;
+    width: 18rem;
+    height: 6rem;
     border-radius: 12px;
     background-color: white;
 
@@ -115,7 +117,7 @@ body{
 .containerQuantificacao{
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 40px;
 }
 
@@ -128,8 +130,8 @@ body{
 
 .paragrafoQuantifica{
 
-    width: 200px;
-    height: 40px;
+    width: 12rem;
+    height: 6rem;
     border-radius: 12px;
     background-color: white;
 
@@ -146,8 +148,8 @@ body{
 
 .paragrafoContador{
 
-    width: 100px;
-    height: 40px;
+    width: 8rem;
+    height: 6rem;
     border-radius: 12px;
     background-color: white;
 
@@ -190,9 +192,8 @@ body{
     .titulosEspecificacoes{
 
         
-        width: 200px;
-        height: 42px;
-
+        width: 12rem;
+        height: 6rem;
         font-size: 24px;
 
         margin-left: 5px;
