@@ -354,7 +354,7 @@ Logo, o workflow relacionado ao sistema de branches pode ser observado na imagem
 <!-- # **############## SPRINT 1 ACABA AQUI #############** -->
 
 
-<!-- # Projeto da Solução
+ # Projeto da Solução
 
 Usando princípios da metodologia de organização de tarefas com um Kanban no Github, issues e tarefas tiveram um fluxo
 organizado de desenvolvimento, desde a coluna de "To Do" até a de "Done". Nossa intenção era deixar o processo claro
