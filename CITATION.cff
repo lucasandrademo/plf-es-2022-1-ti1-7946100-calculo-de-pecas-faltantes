@@ -1,0 +1,37 @@
+cff-version: 1.0.1
+message: Please cite this software using these metadata.
+title: Cálculo de Peças Faltantes
+authors:
+  - family-names: Estevam Pacheco de Souza
+    given-names: Daniel 
+  - family-names: Augusto Souza Borges
+    given-names: Gabriel 
+  - family-names: Machado de Oliveira Andrade
+    given-names: Lucas
+  - family-names: Rabelo de Freitas
+    given-names: Pedro
+  - family-names: Pierre Martins
+    given-names: Rafael
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Soares Vieira de Vasconcelos
+    given-names: Amália
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Luiz Silva Barbosa
+    given-names: Joao
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Vieira Carneiro
+    given-names: Rommel
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Alves Nogueira
+    given-names: Simone
+keywords:
+  - indústria
+  - estoque
+repository-code: 
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2022-07-14
