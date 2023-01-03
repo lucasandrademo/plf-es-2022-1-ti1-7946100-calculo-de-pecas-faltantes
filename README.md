@@ -22,7 +22,3 @@ Portanto, o grande problema que essas empresas enfrentam é descobrir quanto e q
 * Joao Luiz Silva Barbosa
 * Rommel Vieira Carneiro
 * Simone Alves Nogueira
-
-## Instruções de utilização
-
-Esse tópico está em processo de criação e será atualizado após finalização do software.
